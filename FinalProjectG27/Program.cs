@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using FinalProjectG27.Views;
 
 namespace FinalProjectG27
 {
@@ -13,7 +14,7 @@ namespace FinalProjectG27
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainDashBoard());
         }
     }
 }
