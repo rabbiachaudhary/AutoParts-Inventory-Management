@@ -43,5 +43,36 @@ namespace FinalProjectG27.Views
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            ProductMain a = new ProductMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            EmployeesMain a = new EmployeesMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
