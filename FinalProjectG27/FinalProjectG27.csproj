@@ -76,6 +76,12 @@
     <Compile Include="Views\AddSaleProducts.Designer.cs">
       <DependentUpon>AddSaleProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddStockTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddStockTransfer.Designer.cs">
+      <DependentUpon>AddStockTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,24 @@
     <Compile Include="Views\SaleOrdersMain.Designer.cs">
       <DependentUpon>SaleOrdersMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShopStockMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShopStockMain.Designer.cs">
+      <DependentUpon>ShopStockMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StocksMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StocksMain.Designer.cs">
+      <DependentUpon>StocksMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockTransferMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StockTransferMain.Designer.cs">
+      <DependentUpon>StockTransferMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SuppliersMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +191,12 @@
     </Compile>
     <Compile Include="Views\WarehousesMain.Designer.cs">
       <DependentUpon>WarehousesMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WarehouseStockMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WarehouseStockMain.Designer.cs">
+      <DependentUpon>WarehouseStockMain.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
@@ -182,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddSaleProducts.resx">
       <DependentUpon>AddSaleProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddStockTransfer.resx">
+      <DependentUpon>AddStockTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
@@ -232,11 +265,23 @@
     <EmbeddedResource Include="Views\SaleOrdersMain.resx">
       <DependentUpon>SaleOrdersMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShopStockMain.resx">
+      <DependentUpon>ShopStockMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StocksMain.resx">
+      <DependentUpon>StocksMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockTransferMain.resx">
+      <DependentUpon>StockTransferMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SuppliersMain.resx">
       <DependentUpon>SuppliersMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\WarehousesMain.resx">
       <DependentUpon>WarehousesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WarehouseStockMain.resx">
+      <DependentUpon>WarehouseStockMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -268,6 +313,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forklift.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

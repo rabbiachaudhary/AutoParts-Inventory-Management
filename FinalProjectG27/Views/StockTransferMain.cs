@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProjectG27.Views
 {
-    public partial class EmployeesMain : Form
+    public partial class StockTransferMain : Form
     {
-        public EmployeesMain()
+        public StockTransferMain()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace FinalProjectG27.Views
 
             dimForm dimForm = new dimForm();
             dimForm.Show();
-            AddEmployee a = new AddEmployee(true);
+            AddStockTransfer a = new AddStockTransfer(true);
             a.TopMost = true;
             a.ShowDialog();
             dimForm.Close();
@@ -30,18 +30,12 @@ namespace FinalProjectG27.Views
 
         private void editpic_Click(object sender, EventArgs e)
         {
-
             dimForm dimForm = new dimForm();
             dimForm.Show();
-            AddEmployee a = new AddEmployee(false);
+            AddStockTransfer a = new AddStockTransfer(false);
             a.TopMost = true;
             a.ShowDialog();
             dimForm.Close();
-        }
-
-        private void EmployeesMain_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

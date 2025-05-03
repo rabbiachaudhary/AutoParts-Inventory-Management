@@ -188,6 +188,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label2);
             this.Name = "AddWarehouse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddWarehouse";
             this.Load += new System.EventHandler(this.AddWarehouse_Load);
             this.panel1.ResumeLayout(false);
