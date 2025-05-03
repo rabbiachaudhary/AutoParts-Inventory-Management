@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\AddOrderProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddOrderProducts.Designer.cs">
+      <DependentUpon>AddOrderProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddPurchase.Designer.cs">
+      <DependentUpon>AddPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddSale.Designer.cs">
+      <DependentUpon>AddSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddSaleProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddSaleProducts.Designer.cs">
+      <DependentUpon>AddSaleProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CategoryMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +126,39 @@
     <Compile Include="Views\ProductMain.Designer.cs">
       <DependentUpon>ProductMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PurchaseOrderMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PurchaseOrderMain.Designer.cs">
+      <DependentUpon>PurchaseOrderMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleOrdersMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SaleOrdersMain.Designer.cs">
+      <DependentUpon>SaleOrdersMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SuppliersMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SuppliersMain.Designer.cs">
+      <DependentUpon>SuppliersMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\AddOrderProducts.resx">
+      <DependentUpon>AddOrderProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddPurchase.resx">
+      <DependentUpon>AddPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddSale.resx">
+      <DependentUpon>AddSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddSaleProducts.resx">
+      <DependentUpon>AddSaleProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CategoryMain.resx">
       <DependentUpon>CategoryMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +192,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductMain.resx">
       <DependentUpon>ProductMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PurchaseOrderMain.resx">
+      <DependentUpon>PurchaseOrderMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaleOrdersMain.resx">
+      <DependentUpon>SaleOrdersMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SuppliersMain.resx">
+      <DependentUpon>SuppliersMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

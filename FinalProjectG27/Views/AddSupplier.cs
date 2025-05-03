@@ -10,32 +10,36 @@ using System.Windows.Forms;
 
 namespace FinalProjectG27.Views
 {
-    public partial class AddProduct : Form
+    public partial class AddSupplier : Form
     {
-        private bool iaAddMode;
-        public AddProduct(bool iaAddMode=false)
+        private bool isAddMode;
+        public AddSupplier(bool isAddMode = false)
         {
             InitializeComponent();
-            this.iaAddMode = iaAddMode;
+            this.isAddMode = isAddMode;
         }
-
-        private void AddProduct_Load(object sender, EventArgs e)
+        private void AddSupplier_Load(object sender, EventArgs e)
         {
-            if (iaAddMode)
+            if (isAddMode)
             {
-                dynamic.Text = "Add Product";
+                dynamic.Text = "Add Supplier";
                 Addbtn.Visible = true;
                 updatebtn.Visible = false;
             }
             else
             {
-                dynamic.Text = "Edit Product";
+                dynamic.Text = "Edit Supplier";
                 Addbtn.Visible = false;
                 updatebtn.Visible = true;
             }
 
 
-            
+
+
+        }
+
+        private void Addbtn_Click(object sender, EventArgs e)
+        {
 
         }
 

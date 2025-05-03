@@ -304,5 +304,45 @@ namespace FinalProjectG27
             cusbtn.ForeColor = Color.Black;
         }
 
+        private void suppbtn_Click(object sender, EventArgs e)
+        {
+            SuppliersMain suppliersMain = new SuppliersMain();
+            suppliersMain.WindowState = this.WindowState;
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                suppliersMain.Size = this.Size;
+                suppliersMain.Location = this.Location;
+            }
+            suppliersMain.Show();
+            this.Hide();
+        }
+
+        private void purbtn_Click(object sender, EventArgs e)
+        {
+            PurchaseOrderMain purchaseOrder = new PurchaseOrderMain();
+            purchaseOrder.WindowState = this.WindowState;
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                purchaseOrder.Size = this.Size;
+                purchaseOrder.Location = this.Location;
+            }
+            purchaseOrder.Show();
+            this.Hide();
+
+        }
+
+        private void salebtn_Click(object sender, EventArgs e)
+        {
+            SaleOrdersMain saleorder = new SaleOrdersMain();
+            saleorder.WindowState = this.WindowState;
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                saleorder.Size = this.Size;
+                saleorder.Location = this.Location;
+            }
+            saleorder.Show();
+            this.Hide();
+
+        }
     }
 }

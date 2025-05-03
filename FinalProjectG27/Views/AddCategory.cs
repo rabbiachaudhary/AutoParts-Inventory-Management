@@ -37,5 +37,10 @@ namespace FinalProjectG27.Views
             }
 
         }
+
+        private void editbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
