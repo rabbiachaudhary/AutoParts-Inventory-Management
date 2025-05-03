@@ -82,6 +82,12 @@
     <Compile Include="Views\AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddWarehouse.Designer.cs">
+      <DependentUpon>AddWarehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CategoryMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,12 @@
     <Compile Include="Views\SuppliersMain.Designer.cs">
       <DependentUpon>SuppliersMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\WarehousesMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WarehousesMain.Designer.cs">
+      <DependentUpon>WarehousesMain.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddWarehouse.resx">
+      <DependentUpon>AddWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CategoryMain.resx">
       <DependentUpon>CategoryMain.cs</DependentUpon>
@@ -219,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SuppliersMain.resx">
       <DependentUpon>SuppliersMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WarehousesMain.resx">
+      <DependentUpon>WarehousesMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
