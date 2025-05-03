@@ -344,5 +344,20 @@ namespace FinalProjectG27
             this.Hide();
 
         }
+
+        private void empbtn_Click(object sender, EventArgs e)
+        {
+
+            EmployeesMain Main = new EmployeesMain();
+            Main.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                Main.Size = this.Size;
+                Main.Location = this.Location;
+            }
+            Main.Show();
+            this.Hide();
+
+        }
     }
 }
