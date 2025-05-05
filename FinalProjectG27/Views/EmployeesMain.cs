@@ -15,6 +15,8 @@ namespace FinalProjectG27.Views
         public EmployeesMain()
         {
             InitializeComponent();
+            dataGridView1.Columns["id"].Visible = false;
+
         }
 
         private void addpic_Click(object sender, EventArgs e)
@@ -22,7 +24,7 @@ namespace FinalProjectG27.Views
 
             dimForm dimForm = new dimForm();
             dimForm.Show();
-            AddEmployee a = new AddEmployee(true);
+            AddEmployee a = new AddEmployee(0,null,null,null,null,null,null,true);
             a.TopMost = true;
             a.ShowDialog();
             dimForm.Close();
@@ -30,13 +32,29 @@ namespace FinalProjectG27.Views
 
         private void editpic_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
 
-            dimForm dimForm = new dimForm();
-            dimForm.Show();
-            AddEmployee a = new AddEmployee(false);
-            a.TopMost = true;
-            a.ShowDialog();
-            dimForm.Close();
+                string fname = dataGridView1.CurrentRow.Cells["First Name"].Value.ToString();
+                string lname = dataGridView1.CurrentRow.Cells["Last Name"].Value.ToString();
+                string contact = dataGridView1.CurrentRow.Cells["Contact"].Value.ToString();
+                string email = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
+                string address = dataGridView1.CurrentRow.Cells["Address"].Value.ToString();
+                string status = dataGridView1.CurrentRow.Cells["Status"].Value.ToString();
+
+
+                dimForm dimForm = new dimForm();
+                dimForm.Show();
+                AddEmployee a = new AddEmployee(id,fname,lname,contact,email,address,status,false);
+                a.TopMost = true;
+                a.ShowDialog();
+                dimForm.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first");
+            }
         }
 
         private void EmployeesMain_Load(object sender, EventArgs e)
