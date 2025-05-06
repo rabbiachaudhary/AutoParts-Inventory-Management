@@ -78,6 +78,7 @@
             this.addbtn.TabIndex = 36;
             this.addbtn.Text = "Add";
             this.addbtn.UseVisualStyleBackColor = false;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // editbtn
             // 

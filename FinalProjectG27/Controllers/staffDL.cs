@@ -51,5 +51,14 @@ namespace FinalProjectG27
             };
             databasehelper.ExecuteDML(query, parameter);
         }
+        public static void DeleteStaff(int id)
+        {
+            string query = @"delete from staff where id=@ID";
+            var parameter = new Dictionary<string, object>
+            {
+                {"@ID",id }
+            };
+            databasehelper.ExecuteDML(query);
+        }
     }
 }

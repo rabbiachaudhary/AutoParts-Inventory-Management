@@ -28,7 +28,10 @@ namespace FinalProjectG27.Views
             textBox5.Text = address;
             comboBox1.SelectedItem = status;
         }
-
+        public AddEmployee(bool isAdd = true)
+        {
+            IsAdd= isAdd;
+        }
         private void AddEmployee_Load(object sender, EventArgs e)
         {
 
@@ -61,6 +64,21 @@ namespace FinalProjectG27.Views
             MessageBox.Show("Staff updated successfully");
             this.Close();
 
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            string fname = textBox4.Text;
+            string lname = textBox3.Text;
+            string contact = textBox1.Text;
+            string address = textBox5.Text;
+            string email = textBox2.Text;
+            string status = comboBox1.SelectedItem.ToString();
+            staffBL s = new staffBL(fname, lname, contact, email, address, status);
+            staffDL.AddStaff(s);
+
+            MessageBox.Show("Staff added successfully");
+            this.Close();
         }
     }
 }
