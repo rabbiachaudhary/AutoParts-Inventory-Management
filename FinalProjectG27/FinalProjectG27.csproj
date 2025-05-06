@@ -98,8 +98,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerBL.cs" />
     <Compile Include="databasehelper.cs" />
     <Compile Include="locationsBL.cs" />
+    <Compile Include="ProductsBL.cs" />
     <Compile Include="staffBL.cs" />
     <Compile Include="staffDL.cs" />
     <Compile Include="Views\AddEmployee.cs">

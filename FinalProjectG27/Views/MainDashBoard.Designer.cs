@@ -69,7 +69,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.payments = new System.Windows.Forms.Label();
+            this.customers = new System.Windows.Forms.Label();
             this.sales = new System.Windows.Forms.Label();
             this.purchase = new System.Windows.Forms.Label();
             this.reports = new System.Windows.Forms.Label();
@@ -734,15 +734,15 @@
             this.tableLayoutPanel6.ColumnCount = 9;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel6.Controls.Add(this.payments, 7, 0);
+            this.tableLayoutPanel6.Controls.Add(this.customers, 7, 0);
             this.tableLayoutPanel6.Controls.Add(this.sales, 5, 0);
             this.tableLayoutPanel6.Controls.Add(this.purchase, 6, 0);
             this.tableLayoutPanel6.Controls.Add(this.reports, 8, 0);
@@ -760,23 +760,23 @@
             this.tableLayoutPanel6.TabIndex = 3;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
-            // payments
+            // customers
             // 
-            this.payments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.customers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.payments.AutoSize = true;
-            this.payments.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payments.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.payments.Location = new System.Drawing.Point(875, 0);
-            this.payments.Name = "payments";
-            this.payments.Size = new System.Drawing.Size(132, 69);
-            this.payments.TabIndex = 10;
-            this.payments.Text = "Payments";
-            this.payments.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.payments.Click += new System.EventHandler(this.payments_Click);
-            this.payments.MouseEnter += new System.EventHandler(this.payment_MouseEnter);
-            this.payments.MouseLeave += new System.EventHandler(this.payment_MouseLeave);
+            this.customers.AutoSize = true;
+            this.customers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.customers.Location = new System.Drawing.Point(875, 0);
+            this.customers.Name = "customers";
+            this.customers.Size = new System.Drawing.Size(132, 69);
+            this.customers.TabIndex = 10;
+            this.customers.Text = "Customers";
+            this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customers.Click += new System.EventHandler(this.payments_Click);
+            this.customers.MouseEnter += new System.EventHandler(this.payment_MouseEnter);
+            this.customers.MouseLeave += new System.EventHandler(this.payment_MouseLeave);
             // 
             // sales
             // 
@@ -896,9 +896,9 @@
             this.orders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.orders.Location = new System.Drawing.Point(277, 0);
             this.orders.Name = "orders";
-            this.orders.Size = new System.Drawing.Size(103, 69);
+            this.orders.Size = new System.Drawing.Size(128, 69);
             this.orders.TabIndex = 6;
-            this.orders.Text = "Orders";
+            this.orders.Text = "Suppliers";
             this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.orders.Click += new System.EventHandler(this.orders_Click);
             this.orders.MouseEnter += new System.EventHandler(this.orders_MouseEnter);
@@ -913,11 +913,11 @@
             this.suppliers.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.suppliers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suppliers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.suppliers.Location = new System.Drawing.Point(386, 0);
+            this.suppliers.Location = new System.Drawing.Point(411, 0);
             this.suppliers.Name = "suppliers";
-            this.suppliers.Size = new System.Drawing.Size(172, 69);
+            this.suppliers.Size = new System.Drawing.Size(147, 69);
             this.suppliers.TabIndex = 5;
-            this.suppliers.Text = "Manufacturer";
+            this.suppliers.Text = "WareHouses";
             this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.suppliers.Click += new System.EventHandler(this.label6_Click);
             this.suppliers.MouseEnter += new System.EventHandler(this.suppliers_MouseEnter);
@@ -1006,7 +1006,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label payments;
+        private System.Windows.Forms.Label customers;
         private System.Windows.Forms.Label sales;
         private System.Windows.Forms.Label stock;
         private System.Windows.Forms.Label orders;

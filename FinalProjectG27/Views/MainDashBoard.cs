@@ -40,7 +40,15 @@ namespace FinalProjectG27
 
         private void label6_Click(object sender, EventArgs e)
         {
-
+            WarehousesMain warehousesMain = new WarehousesMain();
+            warehousesMain.WindowState = this.WindowState;
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                warehousesMain.Size = this.Size;
+                warehousesMain.Location = this.Location;
+            }
+            warehousesMain.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -176,15 +184,15 @@ namespace FinalProjectG27
         private void payment_MouseEnter(object sender, EventArgs e)
         {
 
-            payments.Font = new Font(payments.Font.FontFamily, payments.Font.Size + 1, FontStyle.Bold);
-            payments.ForeColor = Color.Red;
+            customers.Font = new Font(customers.Font.FontFamily, customers.Font.Size + 1, FontStyle.Bold);
+            customers.ForeColor = Color.Red;
         }
 
         private void payment_MouseLeave(object sender, EventArgs e)
         {
 
-            payments.Font = new Font(payments.Font.FontFamily, payments.Font.Size - 1, FontStyle.Regular);
-            payments.ForeColor = Color.White;
+            customers.Font = new Font(customers.Font.FontFamily, customers.Font.Size - 1, FontStyle.Regular);
+            customers.ForeColor = Color.White;
         }
 
         private void reports_MouseEnter(object sender, EventArgs e)
@@ -202,7 +210,15 @@ namespace FinalProjectG27
         }
         private void employee_Click(object sender, EventArgs e)
         {
-
+            EmployeesMain employee = new EmployeesMain();
+            employee.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                employee.Size = this.Size;
+                employee.Location = this.Location;
+            }
+            employee.Show();
+            this.Hide();
         }
 
         private void employee_MouseEnter_1(object sender, EventArgs e)
@@ -446,7 +462,15 @@ namespace FinalProjectG27
 
         private void stockbtn_Click(object sender, EventArgs e)
         {
-
+            StocksMain stocksMain = new StocksMain();
+            stocksMain.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                stocksMain.Size = this.Size;
+                stocksMain.Location = this.Location;
+            }
+            stocksMain.Show();
+            this.Hide();
         }
 
         private void tableLayoutPanel16_Paint(object sender, PaintEventArgs e)
@@ -526,7 +550,15 @@ namespace FinalProjectG27
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-
+            MainDashBoard mainDashBoard = new MainDashBoard();
+            mainDashBoard.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                mainDashBoard.Size = this.Size;
+                mainDashBoard.Location = this.Location;
+            }
+            mainDashBoard.Show();
+            this.Hide();
         }
 
         private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
@@ -536,22 +568,48 @@ namespace FinalProjectG27
 
         private void payments_Click(object sender, EventArgs e)
         {
-
+            CustomersMain customersMain = new CustomersMain();
+            customersMain.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                customersMain.Size = this.Size;
+                customersMain.Location = this.Location;
+            }
+            customersMain.Show();
+            this.Hide();
         }
 
         private void sales_Click(object sender, EventArgs e)
         {
+            SaleOrdersMain sales = new SaleOrdersMain();
+            sales.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                sales.Size = this.Size;
+                sales.Location = this.Location;
+            }
+            sales.Show();
+            this.Hide();
 
         }
 
         private void purchase_Click(object sender, EventArgs e)
         {
+            PurchaseOrderMain purchase = new PurchaseOrderMain();
+            purchase.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                purchase.Size = this.Size;
+                purchase.Location = this.Location;
+            }
+            purchase.Show();
+            this.Hide();
 
         }
 
         private void reports_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void product_Click(object sender, EventArgs e)
@@ -566,7 +624,15 @@ namespace FinalProjectG27
 
         private void orders_Click(object sender, EventArgs e)
         {
-
+            SuppliersMain suppliersMain = new SuppliersMain();
+            suppliersMain.WindowState = this.WindowState;
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                suppliersMain.Size = this.Size;
+                suppliersMain.Location = this.Location;
+            }
+            suppliersMain.Show();
+            this.Hide();
         }
     }
 }
