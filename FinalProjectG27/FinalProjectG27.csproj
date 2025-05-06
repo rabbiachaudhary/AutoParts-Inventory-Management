@@ -98,17 +98,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerBL.cs" />
+    <Compile Include="Controllers\CategoryDL.cs" />
+    <Compile Include="Controllers\ProductsDL.cs" />
+    <Compile Include="Models\CategoryBL.cs" />
+    <Compile Include="Models\CustomerBL.cs" />
     <Compile Include="databasehelper.cs" />
-
-    <Compile Include="locationsBL.cs" />
-    <Compile Include="ProductsBL.cs" />
-    <Compile Include="staffBL.cs" />
-    <Compile Include="staffDL.cs" />
+    <Compile Include="Models\ProductsBL.cs" />
     <Compile Include="Models\locationsBL.cs" />
     <Compile Include="Models\staffBL.cs" />
     <Compile Include="Controllers\staffDL.cs" />
-
     <Compile Include="Views\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
