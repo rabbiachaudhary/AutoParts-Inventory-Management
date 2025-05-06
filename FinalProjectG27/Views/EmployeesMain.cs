@@ -16,7 +16,7 @@ namespace FinalProjectG27.Views
         {
             InitializeComponent();
             dataGridView1.Columns["id"].Visible = false;
-
+            loaddata();
         }
 
         private void addpic_Click(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace FinalProjectG27.Views
 
             dimForm dimForm = new dimForm();
             dimForm.Show();
-            AddEmployee a = new AddEmployee(0,null,null,null,null,null,null,true);
+            AddEmployee a = new AddEmployee(true);
             a.TopMost = true;
             a.ShowDialog();
             dimForm.Close();
@@ -61,7 +61,15 @@ namespace FinalProjectG27.Views
         {
 
         }
-
+        private void loaddata()
+        {
+            DataTable dt = new DataTable();
+            dt = staffDL.GetStaff();
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+            }
+        }
         private void label4_Click(object sender, EventArgs e)
         {
             ProductMain a = new ProductMain();
@@ -91,6 +99,25 @@ namespace FinalProjectG27.Views
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tableLayoutPanel19_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+
+                staffDL.DeleteStaff(id);    
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first");
+            }
         }
     }
 }
