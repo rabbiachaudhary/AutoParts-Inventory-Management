@@ -70,12 +70,12 @@ namespace FinalProjectG27.Controllers
         }
         public static void DeleteProduct(int id)
         {
-            string query = @"delete from products where id=@ID";
+            string query = @"delete from products where product_id=@ID";
             var parameter = new Dictionary<string, object>
             {
                 {"@ID",id }
             };
-            databasehelper.ExecuteDML(query);
+            databasehelper.ExecuteDML(query,parameter);
         }
 
         public static int GetCategoryIdByName(string categoryName)

@@ -30,12 +30,12 @@ namespace FinalProjectG27.Views
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            dimForm dimForm = new dimForm();
-            dimForm.Show();
-            AddProduct addProduct = new AddProduct(true);
+            //dimForm dimForm = new dimForm();
+            //dimForm.Show();
+            AddProduct addProduct = new AddProduct(this,true);
             addProduct.TopMost = true;
             addProduct.ShowDialog();
-            dimForm.Close();
+            //dimForm.Close();
 
         }
 
@@ -49,16 +49,14 @@ namespace FinalProjectG27.Views
             //dimForm dimForm = new dimForm();
             //dimForm.Show();
 
-            if (dgvProducts.CurrentRow != null)
+            if (dgvProducts.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Product_ID"].Value);
 
                 string name = dgvProducts.CurrentRow.Cells["ProductName"].Value.ToString();
                 string d = dgvProducts.CurrentRow.Cells["Description"].Value.ToString();
-                // Get category ID from DataGridView
-                int categoryId = Convert.ToInt32(dgvProducts.CurrentRow.Cells["Category"].Value);
-
-                // Convert category ID to category name
+                                                                                                                       //review this portion for category_id
+                int categoryId = Convert.ToInt32(dgvProducts.CurrentRow.Cells["Category"].Value);               
                 string cn = ProductsDL.GetCategoryNameById(categoryId);
                 string w = dgvProducts.CurrentRow.Cells["Weight"].Value.ToString();
                 string s = dgvProducts.CurrentRow.Cells["Size"].Value.ToString();
@@ -66,14 +64,14 @@ namespace FinalProjectG27.Views
                 string sp = dgvProducts.CurrentRow.Cells["Sale_Price"].Value.ToString();
                 string pp = dgvProducts.CurrentRow.Cells["Purchase_price"].Value.ToString();
 
-                AddProduct addProduct = new AddProduct(id,name,d,cn,w,s,war,pp,sp,false);
+                AddProduct addProduct = new AddProduct(id,this,name,d,cn,w,s,war,pp,sp,false);
                 addProduct.TopMost = true;
                 addProduct.ShowDialog();
             }
 
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Please select a row first");
             }
 
             //dimForm.Close();
@@ -101,11 +99,63 @@ namespace FinalProjectG27.Views
         {
 
         }
-        private DataTable LoadData()
+        public DataTable LoadData()
         {
             DataTable dt = ProductsDL.GetData();
             dgvProducts.DataSource = dt;
             return dt;
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvProducts.CurrentRow != null)
+                {
+                    DialogResult confirm = MessageBox.Show("Are you sure you want to delete this record?",
+                                                           "Confirm Deletion",
+                                                           MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Warning);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        int id = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Product_ID"].Value);                                                                                                                         
+                        ProductsDL.DeleteProduct(id);                                                                                                                
+                        dgvProducts.Rows.Remove(dgvProducts.CurrentRow);
+                        MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row first.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (IndexOutOfRangeException ie)
+            {
+                MessageBox.Show("No row selected properly: " + ie.Message, "Index Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            MainDashBoard mainDashBoard = new MainDashBoard();
+            mainDashBoard.StartPosition = FormStartPosition.Manual;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+               
+                mainDashBoard.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+
+                mainDashBoard.Location = this.Location;
+            }
+            this.Hide();
+            mainDashBoard.Show();
         }
     }
 }

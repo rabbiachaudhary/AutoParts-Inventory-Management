@@ -16,11 +16,13 @@ namespace FinalProjectG27.Views
     {
         private bool iaAddMode;
         private int productId;
+        private ProductMain productMain;
         //update constructor
-        public AddProduct(int id, string name, string Des, string Category, string Weight, string Size, string Warranty, string purp, string salep, bool iaAddMode = false)
+        public AddProduct(int id, ProductMain productMain ,string name, string Des, string Category, string Weight, string Size, string Warranty, string purp, string salep, bool iaAddMode = false)
         {
             InitializeComponent();
             this.iaAddMode = iaAddMode;
+            this.productMain = productMain;
             productId = id;
             product.Text = name;
             des.Text = Des;
@@ -31,10 +33,11 @@ namespace FinalProjectG27.Views
             pp.Text = purp;
             sp.Text = salep;
         }
-        public AddProduct(bool iaAddMode = false)
+        public AddProduct(ProductMain productMain,bool iaAddMode = false)
         {
             InitializeComponent();
             this.iaAddMode = iaAddMode;
+            this.productMain= productMain;
         }
 
         private void AddProduct_Load(object sender, EventArgs e)
@@ -76,7 +79,9 @@ namespace FinalProjectG27.Views
 
             ProductsBL Product = new ProductsBL(productName, description, Weight, Size, Warranty, purP, saleP, categoryId);
             ProductsDL.UpdateProduct(Product, productId);
+            productMain.LoadData();
             MessageBox.Show("Updated Successfully");
+            this.Close();
         }
 
 
@@ -103,6 +108,8 @@ namespace FinalProjectG27.Views
             if (isadded)
             {
                 MessageBox.Show("Product Added Successfully");
+                productMain.LoadData();
+                this.Close();
             }
             else
             {

@@ -3975,6 +3975,9 @@
         srJGgegx+drtrIj/TIuo6QRVWvW/vrU9WVlZWVlZWVlZVdIfAYxjtPk7GejxAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="category_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="CategoryName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

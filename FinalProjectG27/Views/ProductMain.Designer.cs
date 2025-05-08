@@ -687,6 +687,7 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 1;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // tableLayoutPanel18
             // 
@@ -924,6 +925,7 @@
             this.delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.delete.TabIndex = 4;
             this.delete.TabStop = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // textBox1
             // 
