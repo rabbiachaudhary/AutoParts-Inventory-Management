@@ -22,12 +22,12 @@ namespace FinalProjectG27.Views
         private void addpic_Click(object sender, EventArgs e)
         {
 
-            dimForm dimForm = new dimForm();
-            dimForm.Show();
-            AddEmployee a = new AddEmployee(true);
+            //dimForm dimForm = new dimForm();
+            //dimForm.Show();
+            AddEmploe a = new AddEmploe();
             a.TopMost = true;
             a.ShowDialog();
-            dimForm.Close();
+            //dimForm.Close();
         }
 
         private void editpic_Click(object sender, EventArgs e)
@@ -36,20 +36,20 @@ namespace FinalProjectG27.Views
             {
                 int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
 
-                string fname = dataGridView1.CurrentRow.Cells["First Name"].Value.ToString();
-                string lname = dataGridView1.CurrentRow.Cells["Last Name"].Value.ToString();
+                string fname = dataGridView1.CurrentRow.Cells["first_name"].Value.ToString();
+                string lname = dataGridView1.CurrentRow.Cells["last_name"].Value.ToString();
                 string contact = dataGridView1.CurrentRow.Cells["Contact"].Value.ToString();
                 string email = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
                 string address = dataGridView1.CurrentRow.Cells["Address"].Value.ToString();
                 string status = dataGridView1.CurrentRow.Cells["Status"].Value.ToString();
 
 
-                dimForm dimForm = new dimForm();
-                dimForm.Show();
+                //dimForm dimForm = new dimForm();
+                //dimForm.Show();
                 AddEmployee a = new AddEmployee(id,fname,lname,contact,email,address,status,false);
                 a.TopMost = true;
                 a.ShowDialog();
-                dimForm.Close();
+                //dimForm.Close();
             }
             else
             {

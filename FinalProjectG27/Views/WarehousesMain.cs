@@ -19,24 +19,24 @@ namespace FinalProjectG27.Views
 
         private void addpic_Click(object sender, EventArgs e)
         {
-            dimForm dimForm = new dimForm();
-            dimForm.Show();
-            AddWarehouse a = new AddWarehouse(true);
-            a.TopMost = true;
-            a.ShowDialog();
-            dimForm.Close();
+            //dimForm dimForm = new dimForm();
+            //dimForm.Show();
+            //AddWarehouse a = new AddWarehouse(true);
+            //a.TopMost = true;
+            //a.ShowDialog();
+            //dimForm.Close();
 
         }
 
         private void editpic_Click(object sender, EventArgs e)
         {
 
-            dimForm dimForm = new dimForm();
-            dimForm.Show();
+            //dimForm dimForm = new dimForm();
+            //dimForm.Show();
             AddWarehouse a = new AddWarehouse(false);
             a.TopMost = true;
             a.ShowDialog();
-            dimForm.Close();
+            //dimForm.Close();
         }
     }
 }
