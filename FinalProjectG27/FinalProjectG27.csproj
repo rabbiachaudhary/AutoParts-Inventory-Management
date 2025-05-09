@@ -108,17 +108,11 @@
     <Compile Include="Models\locationsBL.cs" />
     <Compile Include="Models\staffBL.cs" />
     <Compile Include="Controllers\staffDL.cs" />
-    <Compile Include="Views\AddEmploe.cs">
+    <Compile Include="Views\AddEmployeee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AddEmploe.Designer.cs">
-      <DependentUpon>AddEmploe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AddEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\AddEmployee.Designer.cs">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
+    <Compile Include="Views\AddEmployeee.Designer.cs">
+      <DependentUpon>AddEmployeee.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AddOrderProducts.cs">
       <SubType>Form</SubType>
@@ -224,6 +218,12 @@
     <Compile Include="Views\PurchaseOrderMain.Designer.cs">
       <DependentUpon>PurchaseOrderMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SaleOrdersMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,11 +268,8 @@
     </Compile>
     <Compile Include="Models\warehousesBL.cs" />
     <Compile Include="Controllers\warehousesDL.cs" />
-    <EmbeddedResource Include="Views\AddEmploe.resx">
-      <DependentUpon>AddEmploe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\AddEmployee.resx">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddEmployeee.resx">
+      <DependentUpon>AddEmployeee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddOrderProducts.resx">
       <DependentUpon>AddOrderProducts.cs</DependentUpon>

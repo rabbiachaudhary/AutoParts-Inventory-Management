@@ -478,7 +478,7 @@
             this.payments.Name = "payments";
             this.payments.Size = new System.Drawing.Size(132, 69);
             this.payments.TabIndex = 10;
-            this.payments.Text = "Payments";
+            this.payments.Text = "Customers";
             this.payments.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sales
@@ -583,7 +583,7 @@
             this.orders.Name = "orders";
             this.orders.Size = new System.Drawing.Size(103, 69);
             this.orders.TabIndex = 6;
-            this.orders.Text = "Orders";
+            this.orders.Text = "Suppliers";
             this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // suppliers
@@ -599,7 +599,7 @@
             this.suppliers.Name = "suppliers";
             this.suppliers.Size = new System.Drawing.Size(172, 69);
             this.suppliers.TabIndex = 5;
-            this.suppliers.Text = "Manufacturer";
+            this.suppliers.Text = "Warehouses";
             this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StocksMain

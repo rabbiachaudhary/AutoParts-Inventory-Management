@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProjectG27.Views
 {
-    public partial class AddEmploe : Form
+    public partial class Reports : Form
     {
-        public AddEmploe()
+        public Reports()
         {
             InitializeComponent();
         }

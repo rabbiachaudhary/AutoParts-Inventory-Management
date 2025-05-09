@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProjectG27.Controllers;
 
 namespace FinalProjectG27.Views
 {
@@ -15,7 +16,7 @@ namespace FinalProjectG27.Views
         public EmployeesMain()
         {
             InitializeComponent();
-            dataGridView1.Columns["id"].Visible = false;
+
             loaddata();
         }
 
@@ -24,7 +25,7 @@ namespace FinalProjectG27.Views
 
             //dimForm dimForm = new dimForm();
             //dimForm.Show();
-            AddEmploe a = new AddEmploe();
+            AddEmployeee a = new AddEmployeee(this,true);
             a.TopMost = true;
             a.ShowDialog();
             //dimForm.Close();
@@ -32,9 +33,9 @@ namespace FinalProjectG27.Views
 
         private void editpic_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["staff_id"].Value);
 
                 string fname = dataGridView1.CurrentRow.Cells["first_name"].Value.ToString();
                 string lname = dataGridView1.CurrentRow.Cells["last_name"].Value.ToString();
@@ -46,14 +47,15 @@ namespace FinalProjectG27.Views
 
                 //dimForm dimForm = new dimForm();
                 //dimForm.Show();
-                AddEmployee a = new AddEmployee(id,fname,lname,contact,email,address,status,false);
+                AddEmployeee a = new AddEmployeee(this, id, fname, lname, contact, email, address, status, false);
                 a.TopMost = true;
                 a.ShowDialog();
                 //dimForm.Close();
             }
+
             else
             {
-                MessageBox.Show("Please select a row first");
+                MessageBox.Show("Please Select a row first");
             }
         }
 
@@ -105,19 +107,167 @@ namespace FinalProjectG27.Views
         {
 
         }
-
         private void delete_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
+            try
             {
-                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+                if (dataGridView1.CurrentRow != null)
+                {
+                    DialogResult confirm = MessageBox.Show("Are you sure you want to delete this record?",
+                                                           "Confirm Deletion",
+                                                           MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Warning);
 
-                staffDL.DeleteStaff(id);    
+                    if (confirm == DialogResult.Yes)
+                    {
+                        int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["staff_id"].Value);
+                        staffDL.DeleteStaff(id);
+                        dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                        MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loaddata();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row first.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (IndexOutOfRangeException ie)
             {
-                MessageBox.Show("Please select a row first");
+                MessageBox.Show("No row selected properly: " + ie.Message, "Index Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public DataTable LoadData()
+        {
+            DataTable dt = staffDL.GetStaff();
+            dataGridView1.DataSource = dt;
+            return dt;
+        }
+
+        private void product_Click(object sender, EventArgs e)
+        {
+            ProductMain a = new ProductMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void employee_Click(object sender, EventArgs e)
+        {
+            EmployeesMain a = new EmployeesMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void orders_Click(object sender, EventArgs e)
+        {
+            SuppliersMain a = new SuppliersMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void suppliers_Click(object sender, EventArgs e)
+        {
+            WarehousesMain a = new WarehousesMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void stock_Click(object sender, EventArgs e)
+        {
+            StocksMain a = new StocksMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void sales_Click(object sender, EventArgs e)
+        {
+            SaleOrdersMain a = new SaleOrdersMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void purchase_Click(object sender, EventArgs e)
+        {
+            PurchaseOrderMain a = new PurchaseOrderMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void customers_Click(object sender, EventArgs e)
+        {
+            CustomersMain a = new CustomersMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void reports_Click(object sender, EventArgs e)
+        {
+            Reports a = new Reports();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
         }
     }
 }
