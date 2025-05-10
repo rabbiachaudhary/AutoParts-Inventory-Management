@@ -57,6 +57,34 @@ namespace FinalProjectG27.Views
             decimal Tax = decimal.Parse(tax.Text);
             decimal Markup = decimal.Parse(markup.Text);
 
+            // Validate Name
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                MessageBox.Show("Name is required.");
+                return;
+            }
+
+            // Validate Description
+            if (string.IsNullOrWhiteSpace(Des))
+            {
+                MessageBox.Show("Description is required.");
+                return;
+            }
+
+            // Validate Tax
+            if (string.IsNullOrWhiteSpace(tax.Text))
+            {
+                MessageBox.Show("Please enter a valid, non-negative tax value.");
+                return;
+            }
+
+            // Validate Markup
+            if (string.IsNullOrWhiteSpace(markup.Text))
+            {
+                MessageBox.Show("Please enter a valid, non-negative markup value.");
+                return;
+            }
+
             CategoryBL c = new CategoryBL(Name, Des, Tax, Markup);
             CategoryDL.updateCategory(c, categoryId);
             main.LoadData();
@@ -70,6 +98,34 @@ namespace FinalProjectG27.Views
             string Des=des.Text;
             decimal Tax=decimal.Parse(tax.Text);
             decimal Markup = decimal.Parse(markup.Text);
+
+            // Validate Name
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                MessageBox.Show("Name is required.");
+                return;
+            }
+
+            // Validate Description
+            if (string.IsNullOrWhiteSpace(Des))
+            {
+                MessageBox.Show("Description is required.");
+                return;
+            }
+
+            // Validate Tax
+            if (string.IsNullOrWhiteSpace(tax.Text))
+            {
+                MessageBox.Show("Please enter a valid, non-negative tax value.");
+                return;
+            }
+
+            // Validate Markup
+            if (string.IsNullOrWhiteSpace(markup.Text))
+            {
+                MessageBox.Show("Please enter a valid, non-negative markup value.");
+                return;
+            }
 
             CategoryBL c =new CategoryBL(Name, Des, Tax, Markup);
            bool isAdd= CategoryDL.AddCategory(c);

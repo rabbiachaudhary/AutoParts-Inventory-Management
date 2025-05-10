@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProjectG27.Controllers;
+using FinalProjectG27.Models;
 
 
 namespace FinalProjectG27.Views
@@ -21,12 +22,13 @@ namespace FinalProjectG27.Views
         public AddProduct(int id, ProductMain productMain ,string name, string Des, string Category, string Weight, string Size, string Warranty, string purp, string salep, bool iaAddMode = false)
         {
             InitializeComponent();
+            FillComboBoxWithCategories();
             this.iaAddMode = iaAddMode;
             this.productMain = productMain;
             productId = id;
             product.Text = name;
             des.Text = Des;
-            category.Text = Category;
+            comboBox1.Text = Category;
             weight.Text = Weight;
             warranty.Text = Warranty;
             size.Text = Size;
@@ -36,8 +38,30 @@ namespace FinalProjectG27.Views
         public AddProduct(ProductMain productMain,bool iaAddMode = false)
         {
             InitializeComponent();
+            FillComboBoxWithCategories();
             this.iaAddMode = iaAddMode;
             this.productMain= productMain;
+        }
+
+        private void FillComboBoxWithCategories()
+        {
+            try
+            {
+                DataTable dt = CategoryDL.GetAllCategories();
+
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "name"; // What user sees
+                comboBox1.ValueMember = "category_id";              // ID behind the scenes
+
+                if (comboBox1.Items.Count > 0)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load categories: " + ex.Message);
+            }
         }
 
         private void AddProduct_Load(object sender, EventArgs e)
@@ -73,7 +97,55 @@ namespace FinalProjectG27.Views
             decimal purP = decimal.Parse(pp.Text);
             decimal saleP = decimal.Parse(sp.Text);
 
-            string Category = category.Text;
+            string Category = comboBox1.Text;
+            // Validation Checks
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                MessageBox.Show("Product name is required.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                MessageBox.Show("Description is required.");
+                return;
+            }
+
+            if (!decimal.TryParse(weight.Text, out decimal weightValue) || weightValue <= 0)
+            {
+                MessageBox.Show("Please enter a valid weight.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Size))
+            {
+                MessageBox.Show("Size is required.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Warranty))
+            {
+                MessageBox.Show("Warranty is required.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(pp.Text))
+            {
+                MessageBox.Show("Please enter a valid purchase price.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(sp.Text))
+            {
+                MessageBox.Show("Please enter a valid sale price.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Category))
+            {
+                MessageBox.Show("Please select a category.");
+                return;
+            }
 
             int categoryId = ProductsDL.GetCategoryIdByName(Category);
 
@@ -99,7 +171,56 @@ namespace FinalProjectG27.Views
             decimal purP = decimal.Parse(pp.Text);
             decimal saleP = decimal.Parse(sp.Text);
 
-            string Category = category.Text;
+            string Category = comboBox1.Text;
+
+            // Validation Checks
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                MessageBox.Show("Product name is required.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                MessageBox.Show("Description is required.");
+                return;
+            }
+
+            if (!decimal.TryParse(weight.Text, out decimal weightValue) || weightValue <= 0)
+            {
+                MessageBox.Show("Please enter a valid weight.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Size))
+            {
+                MessageBox.Show("Size is required.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Warranty))
+            {
+                MessageBox.Show("Warranty is required.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(pp.Text))
+            {
+                MessageBox.Show("Please enter a valid purchase price.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(sp.Text))
+            {
+                MessageBox.Show("Please enter a valid sale price.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Category))
+            {
+                MessageBox.Show("Please select a category.");
+                return;
+            }
 
             int categoryId = ProductsDL.GetCategoryIdByName(Category);
 

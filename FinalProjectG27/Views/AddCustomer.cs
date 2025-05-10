@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProjectG27.Controllers;
@@ -57,6 +58,41 @@ namespace FinalProjectG27.Views
             string Contact = contact.Text.Trim();
             string Address = address.Text;
 
+            // First Name
+            if (string.IsNullOrWhiteSpace(Fname))
+            {
+                MessageBox.Show("First name is required.");
+                return;
+            }
+
+            // Last Name
+            if (string.IsNullOrWhiteSpace(Lname))
+            {
+                MessageBox.Show("Last name is required.");
+                return;
+            }
+
+            // Email
+            if (string.IsNullOrWhiteSpace(Email))
+            {
+                MessageBox.Show("Email is required.");
+                return;
+            }
+
+            // Contact
+            if (string.IsNullOrWhiteSpace(Contact))
+            {
+                MessageBox.Show("Contact number is required.");
+                return;
+            }
+
+            // Address
+            if (string.IsNullOrWhiteSpace(Address))
+            {
+                MessageBox.Show("Address is required.");
+                return;
+            }
+
             CustomerBL c = new CustomerBL(Fname, Lname, Email, Contact, Address);
             CustomerDL.UpdateCustomer(c,customerId);
             main.LoadData();
@@ -70,6 +106,41 @@ namespace FinalProjectG27.Views
             string Email= email.Text;   
             string Contact= contact.Text.Trim();
             string Address= address.Text;
+
+            // First Name
+            if (string.IsNullOrWhiteSpace(Fname))
+            {
+                MessageBox.Show("First name is required.");
+                return;
+            }
+
+            // Last Name
+            if (string.IsNullOrWhiteSpace(Lname))
+            {
+                MessageBox.Show("Last name is required.");
+                return;
+            }
+
+            // Email
+            if (string.IsNullOrWhiteSpace(Email))
+            {
+                MessageBox.Show("Email is required.");
+                return;
+            }
+
+            // Contact
+            if (string.IsNullOrWhiteSpace(Contact))
+            {
+                MessageBox.Show("Contact number is required.");
+                return;
+            }
+
+            // Address
+            if (string.IsNullOrWhiteSpace(Address))
+            {
+                MessageBox.Show("Address is required.");
+                return;
+            }
 
             if (Contact.Length != 11 || !Contact.All(char.IsDigit))
             {

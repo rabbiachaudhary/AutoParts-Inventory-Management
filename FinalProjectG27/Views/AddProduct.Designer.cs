@@ -42,12 +42,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.category = new System.Windows.Forms.TextBox();
             this.sp = new System.Windows.Forms.TextBox();
             this.pp = new System.Windows.Forms.TextBox();
             this.des = new System.Windows.Forms.TextBox();
             this.Addbtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
+            this.category = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,14 +184,6 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Description";
             // 
-            // category
-            // 
-            this.category.Location = new System.Drawing.Point(415, 84);
-            this.category.Multiline = true;
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(238, 39);
-            this.category.TabIndex = 13;
-            // 
             // sp
             // 
             this.sp.Location = new System.Drawing.Point(415, 157);
@@ -241,11 +234,28 @@
             this.updatebtn.UseVisualStyleBackColor = false;
             this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
+            // category
+            // 
+            this.category.Location = new System.Drawing.Point(415, 84);
+            this.category.Multiline = true;
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(238, 39);
+            this.category.TabIndex = 13;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(415, 84);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(238, 24);
+            this.comboBox1.TabIndex = 19;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 424);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.Addbtn);
             this.Controls.Add(this.des);
@@ -291,11 +301,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox category;
         private System.Windows.Forms.TextBox sp;
         private System.Windows.Forms.TextBox pp;
         private System.Windows.Forms.TextBox des;
         private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.Button updatebtn;
+        private System.Windows.Forms.TextBox category;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

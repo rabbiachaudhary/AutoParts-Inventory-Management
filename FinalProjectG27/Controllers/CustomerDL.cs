@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,14 +39,16 @@ namespace FinalProjectG27.Controllers
 
         public static void UpdateCustomer(CustomerBL s,int id)
         {
-            string query = @"update customers 
+            try
+            {
+                string query = @"update customers 
                              set first_name = @fname, 
                                  last_name = @lname, 
                                  contact = @contact, 
                                  email = @email, 
                                  address = @address
                                  where customer_id = @id";
-            var parameter = new Dictionary<string, object>
+                var parameter = new Dictionary<string, object>
             {
                 {"@fname", s.fname },
                 {"@lname", s.lname },
@@ -54,7 +57,21 @@ namespace FinalProjectG27.Controllers
                 {"@address", s.Address },
                 {"@id", id }
             };
-            databasehelper.ExecuteDML(query, parameter);
+                databasehelper.ExecuteDML(query, parameter);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (InvalidOperationException invOpEx)
+            {
+                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public static DataTable GetData()
@@ -71,6 +88,16 @@ namespace FinalProjectG27.Controllers
                 {"@ID",id }
             };
             databasehelper.ExecuteDML(query,parameter);
+        }
+
+        public static DataTable SearchCustomerByName(string Name)
+        {
+            string query = "SELECT * FROM customers WHERE first_name LIKE @search";
+            var parameter = new Dictionary<string, object>
+            {
+                { "@search", "%" + Name + "%" }
+            };
+            return databasehelper.GetDataTable(query, parameter);
         }
     }
 }

@@ -114,7 +114,7 @@ namespace FinalProjectG27.Controllers
         { "@categoryId", categoryId }
     };
 
-            object result = databasehelper.GetSingleInt(query, parameter);
+            object result = databasehelper.GetSingleValue(query, parameter);
 
             if (result != null)
             {
@@ -122,6 +122,16 @@ namespace FinalProjectG27.Controllers
             }
 
             return categoryName;
+        }
+
+        public static DataTable SearchProductByName(string ProductName)
+        {
+            string query = "SELECT * FROM products WHERE product_name LIKE @search";
+            var parameter = new Dictionary<string, object>
+            {
+                { "@search", "%" + ProductName + "%" }
+            };
+            return databasehelper.GetDataTable(query, parameter);
         }
     }
 }

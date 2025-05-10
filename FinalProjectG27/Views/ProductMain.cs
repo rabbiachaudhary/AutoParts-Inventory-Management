@@ -53,13 +53,13 @@ namespace FinalProjectG27.Views
             {
                 int id = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Product_ID"].Value);
 
-                string name = dgvProducts.CurrentRow.Cells["ProductName"].Value.ToString();
+                string name = dgvProducts.CurrentRow.Cells["Product_Name"].Value.ToString();
                 string d = dgvProducts.CurrentRow.Cells["Description"].Value.ToString();
                                                                                                                        //review this portion for category_id
                 int categoryId = Convert.ToInt32(dgvProducts.CurrentRow.Cells["Category"].Value);               
                 string cn = ProductsDL.GetCategoryNameById(categoryId);
                 string w = dgvProducts.CurrentRow.Cells["Weight"].Value.ToString();
-                string s = dgvProducts.CurrentRow.Cells["Size"].Value.ToString();
+                string s = dgvProducts.CurrentRow.Cells["Sizeof"].Value.ToString();
                 string war = dgvProducts.CurrentRow.Cells["Warranty"].Value.ToString();
                 string sp = dgvProducts.CurrentRow.Cells["Sale_Price"].Value.ToString();
                 string pp = dgvProducts.CurrentRow.Cells["Purchase_price"].Value.ToString();
@@ -156,6 +156,131 @@ namespace FinalProjectG27.Views
             }
             this.Hide();
             mainDashBoard.Show();
+        }
+
+        private void employee_Click(object sender, EventArgs e)
+        {
+            EmployeesMain a = new EmployeesMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void orders_Click(object sender, EventArgs e)
+        {
+            WarehousesMain a = new WarehousesMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void suppliers_Click(object sender, EventArgs e)
+        {
+            SuppliersMain a = new SuppliersMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void stock_Click(object sender, EventArgs e)
+        {
+            StocksMain a = new StocksMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void sales_Click(object sender, EventArgs e)
+        {
+            SaleOrdersMain a = new SaleOrdersMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void purchase_Click(object sender, EventArgs e)
+        {
+            PurchaseOrderMain a = new PurchaseOrderMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void customers_Click(object sender, EventArgs e)
+        {
+            CustomersMain a = new CustomersMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void reports_Click(object sender, EventArgs e)
+        {
+            Reports a = new Reports();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void product_Click(object sender, EventArgs e)
+        {
+            MainDashBoard a = new MainDashBoard();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void pro_TextChanged(object sender, EventArgs e)
+        {
+            string search = pro.Text.Trim();
+            DataTable result = ProductsDL.SearchProductByName(search);
+            dgvProducts.DataSource = result;
         }
     }
 }

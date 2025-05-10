@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.customers = new System.Windows.Forms.Label();
+            this.sales = new System.Windows.Forms.Label();
+            this.purchase = new System.Windows.Forms.Label();
+            this.reports = new System.Windows.Forms.Label();
+            this.employee = new System.Windows.Forms.Label();
+            this.product = new System.Windows.Forms.Label();
+            this.stock = new System.Windows.Forms.Label();
+            this.orders = new System.Windows.Forms.Label();
+            this.suppliers = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,7 +79,7 @@
             this.addpic = new System.Windows.Forms.PictureBox();
             this.editpic = new System.Windows.Forms.PictureBox();
             this.delete = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.categorySearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvCategory = new System.Windows.Forms.DataGridView();
@@ -192,23 +192,23 @@
             this.tableLayoutPanel18.ColumnCount = 9;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel18.Controls.Add(this.label11, 7, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label9, 5, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label10, 6, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label12, 8, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label8, 4, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label7, 2, 0);
-            this.tableLayoutPanel18.Controls.Add(this.label6, 3, 0);
+            this.tableLayoutPanel18.Controls.Add(this.customers, 7, 0);
+            this.tableLayoutPanel18.Controls.Add(this.sales, 5, 0);
+            this.tableLayoutPanel18.Controls.Add(this.purchase, 6, 0);
+            this.tableLayoutPanel18.Controls.Add(this.reports, 8, 0);
+            this.tableLayoutPanel18.Controls.Add(this.employee, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.product, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.stock, 4, 0);
+            this.tableLayoutPanel18.Controls.Add(this.orders, 2, 0);
+            this.tableLayoutPanel18.Controls.Add(this.suppliers, 3, 0);
             this.tableLayoutPanel18.Location = new System.Drawing.Point(279, 2);
             this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -217,141 +217,150 @@
             this.tableLayoutPanel18.Size = new System.Drawing.Size(1113, 69);
             this.tableLayoutPanel18.TabIndex = 3;
             // 
-            // label11
+            // customers
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.customers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(875, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 69);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Payments";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customers.AutoSize = true;
+            this.customers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.customers.Location = new System.Drawing.Point(875, 0);
+            this.customers.Name = "customers";
+            this.customers.Size = new System.Drawing.Size(132, 69);
+            this.customers.TabIndex = 10;
+            this.customers.Text = "Customers";
+            this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customers.Click += new System.EventHandler(this.customers_Click);
             // 
-            // label9
+            // sales
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.sales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(660, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 69);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Sales";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sales.AutoSize = true;
+            this.sales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sales.Location = new System.Drawing.Point(660, 0);
+            this.sales.Name = "sales";
+            this.sales.Size = new System.Drawing.Size(80, 69);
+            this.sales.TabIndex = 8;
+            this.sales.Text = "Sales";
+            this.sales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
-            // label10
+            // purchase
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.purchase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(746, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 69);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Purchase";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchase.AutoSize = true;
+            this.purchase.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchase.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.purchase.Location = new System.Drawing.Point(746, 0);
+            this.purchase.Name = "purchase";
+            this.purchase.Size = new System.Drawing.Size(123, 69);
+            this.purchase.TabIndex = 9;
+            this.purchase.Text = "Purchase";
+            this.purchase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
-            // label12
+            // reports
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.reports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(1013, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 69);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Reports";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reports.AutoSize = true;
+            this.reports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reports.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.reports.Location = new System.Drawing.Point(1013, 0);
+            this.reports.Name = "reports";
+            this.reports.Size = new System.Drawing.Size(97, 69);
+            this.reports.TabIndex = 11;
+            this.reports.Text = "Reports";
+            this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reports.Click += new System.EventHandler(this.reports_Click);
             // 
-            // label5
+            // employee
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.employee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(128, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 69);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Employees";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employee.AutoSize = true;
+            this.employee.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.employee.Location = new System.Drawing.Point(128, 0);
+            this.employee.Name = "employee";
+            this.employee.Size = new System.Drawing.Size(143, 69);
+            this.employee.TabIndex = 4;
+            this.employee.Text = "Employees";
+            this.employee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employee.Click += new System.EventHandler(this.employee_Click);
             // 
-            // label4
+            // product
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.product.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 69);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Products";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.product.AutoSize = true;
+            this.product.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.product.Location = new System.Drawing.Point(3, 0);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(119, 69);
+            this.product.TabIndex = 3;
+            this.product.Text = "Products";
+            this.product.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.product.Click += new System.EventHandler(this.product_Click);
             // 
-            // label8
+            // stock
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.stock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(564, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 69);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Stock";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stock.AutoSize = true;
+            this.stock.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.stock.Location = new System.Drawing.Point(564, 0);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(90, 69);
+            this.stock.TabIndex = 7;
+            this.stock.Text = "Stock";
+            this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
-            // label7
+            // orders
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.orders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(277, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 69);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Orders";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orders.AutoSize = true;
+            this.orders.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.orders.Location = new System.Drawing.Point(277, 0);
+            this.orders.Name = "orders";
+            this.orders.Size = new System.Drawing.Size(143, 69);
+            this.orders.TabIndex = 6;
+            this.orders.Text = "WareHouse";
+            this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orders.Click += new System.EventHandler(this.orders_Click);
             // 
-            // label6
+            // suppliers
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.suppliers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(386, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 69);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Manufacturer";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.suppliers.AutoSize = true;
+            this.suppliers.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.suppliers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppliers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.suppliers.Location = new System.Drawing.Point(426, 0);
+            this.suppliers.Name = "suppliers";
+            this.suppliers.Size = new System.Drawing.Size(132, 69);
+            this.suppliers.TabIndex = 5;
+            this.suppliers.Text = "Suppliers";
+            this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.suppliers.Click += new System.EventHandler(this.suppliers_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -794,7 +803,7 @@
             this.tableLayoutPanel19.Controls.Add(this.addpic, 3, 0);
             this.tableLayoutPanel19.Controls.Add(this.editpic, 4, 0);
             this.tableLayoutPanel19.Controls.Add(this.delete, 5, 0);
-            this.tableLayoutPanel19.Controls.Add(this.textBox1, 2, 0);
+            this.tableLayoutPanel19.Controls.Add(this.categorySearch, 2, 0);
             this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 97);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
@@ -849,16 +858,17 @@
             this.delete.TabStop = false;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
-            // textBox1
+            // categorySearch
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(299, 16);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(935, 67);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Search here";
+            this.categorySearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.categorySearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorySearch.Location = new System.Drawing.Point(299, 16);
+            this.categorySearch.Multiline = true;
+            this.categorySearch.Name = "categorySearch";
+            this.categorySearch.Size = new System.Drawing.Size(935, 67);
+            this.categorySearch.TabIndex = 1;
+            this.categorySearch.Text = "\r\nSearch here ";
+            this.categorySearch.TextChanged += new System.EventHandler(this.categorySearch_TextChanged);
             // 
             // panel1
             // 
@@ -894,14 +904,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.category_id,
@@ -1094,15 +1104,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label customers;
+        private System.Windows.Forms.Label sales;
+        private System.Windows.Forms.Label purchase;
+        private System.Windows.Forms.Label reports;
+        private System.Windows.Forms.Label employee;
+        private System.Windows.Forms.Label product;
+        private System.Windows.Forms.Label stock;
+        private System.Windows.Forms.Label orders;
+        private System.Windows.Forms.Label suppliers;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -1138,7 +1148,7 @@
         private System.Windows.Forms.PictureBox delete;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox categorySearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgvCategory;

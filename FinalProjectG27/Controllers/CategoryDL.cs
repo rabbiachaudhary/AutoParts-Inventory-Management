@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProjectG27.Models;
+using MySql.Data.MySqlClient;
 
 namespace FinalProjectG27.Controllers
 {
@@ -80,7 +81,15 @@ namespace FinalProjectG27.Controllers
 
         public static DataTable GetCategories()
         {
-            string query = "select name,description,tax_percent,markup_percent from product_categories";
+            string query = "select category_id, name,description,tax_percent,markup_percent from product_categories";
+            return databasehelper.GetDataTable(query);
+        }
+
+        //for combo box
+
+        public static DataTable GetAllCategories()
+        {
+            string query = "SELECT category_id,name FROM product_categories"; 
             return databasehelper.GetDataTable(query);
         }
 
@@ -95,6 +104,16 @@ namespace FinalProjectG27.Controllers
             databasehelper.ExecuteDML(query,parameter);
 
 
+        }
+
+        public static DataTable SearchCategoryByName(string categoryName)
+        {
+            string query = "SELECT * FROM product_categories WHERE name LIKE @search";
+            var parameter = new Dictionary<string, object>
+            {
+                { "@search", "%" + categoryName + "%" }
+            };
+            return databasehelper.GetDataTable(query, parameter);
         }
 
     }
