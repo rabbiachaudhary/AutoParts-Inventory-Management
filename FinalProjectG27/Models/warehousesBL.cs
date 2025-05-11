@@ -9,11 +9,16 @@ namespace FinalProjectG27
     internal class warehousesBL
     {
         public string name;
-        public locationsBL location;
-        public warehousesBL(string name, locationsBL location)
+        public string address;
+        public string city;
+        public string postalcode;
+        public warehousesBL(string name, string address,string city,string postal)
         {
             this.name = name;
-            this.location = location;
+            this.address = address;
+            this.city = city;
+            this.postalcode = postal;
         }
+
     }
 }

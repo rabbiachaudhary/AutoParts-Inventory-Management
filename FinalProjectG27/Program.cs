@@ -14,7 +14,7 @@ namespace FinalProjectG27
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainDashBoard());
+            Application.Run(new Login());
         }
     }
 }

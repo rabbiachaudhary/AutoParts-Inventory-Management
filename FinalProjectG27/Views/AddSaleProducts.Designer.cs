@@ -39,6 +39,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sodetail_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -47,11 +49,11 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(50, 111);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(228, 40);
+            this.comboBox2.Size = new System.Drawing.Size(228, 34);
             this.comboBox2.TabIndex = 9;
             // 
             // panel1
@@ -100,20 +102,24 @@
             this.addbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addbtn.Location = new System.Drawing.Point(303, 173);
+            this.addbtn.Location = new System.Drawing.Point(301, 160);
             this.addbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(121, 62);
             this.addbtn.TabIndex = 24;
             this.addbtn.Text = "Done";
             this.addbtn.UseVisualStyleBackColor = false;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderID,
+            this.sodetail_id,
+            this.product_id,
             this.Product,
             this.Quantity});
             this.dataGridView1.Location = new System.Drawing.Point(50, 238);
@@ -135,6 +141,7 @@
             this.button1.TabIndex = 26;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -148,10 +155,11 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(456, 112);
+            this.textBox1.Location = new System.Drawing.Point(456, 106);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(230, 39);
@@ -159,24 +167,38 @@
             // 
             // OrderID
             // 
+            this.OrderID.DataPropertyName = "sale_order_id";
             this.OrderID.HeaderText = "Order ID";
             this.OrderID.MinimumWidth = 8;
             this.OrderID.Name = "OrderID";
-            this.OrderID.Width = 130;
+            // 
+            // sodetail_id
+            // 
+            this.sodetail_id.DataPropertyName = "sodetail_id";
+            this.sodetail_id.HeaderText = "sodetail_id";
+            this.sodetail_id.MinimumWidth = 8;
+            this.sodetail_id.Name = "sodetail_id";
+            // 
+            // product_id
+            // 
+            this.product_id.DataPropertyName = "product_id";
+            this.product_id.HeaderText = "product_id";
+            this.product_id.MinimumWidth = 8;
+            this.product_id.Name = "product_id";
             // 
             // Product
             // 
+            this.Product.DataPropertyName = "Product";
             this.Product.HeaderText = "Product";
             this.Product.MinimumWidth = 8;
             this.Product.Name = "Product";
-            this.Product.Width = 130;
             // 
             // Quantity
             // 
+            this.Quantity.DataPropertyName = "quantity";
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.MinimumWidth = 8;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 130;
             // 
             // AddSaleProducts
             // 
@@ -216,6 +238,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sodetail_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }

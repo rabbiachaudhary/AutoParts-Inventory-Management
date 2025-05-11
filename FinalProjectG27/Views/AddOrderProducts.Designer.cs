@@ -35,12 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.podetail_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.editbtn = new System.Windows.Forms.Button();
-            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,16 +73,20 @@
             this.textBox1.Location = new System.Drawing.Point(484, 106);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 39);
+<<<<<<< Updated upstream
+            this.textBox1.Size = new System.Drawing.Size(230, 34);
+=======
+            this.textBox1.Size = new System.Drawing.Size(230, 40);
+>>>>>>> Stashed changes
             this.textBox1.TabIndex = 6;
             // 
             // comboBox2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(50, 106);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(228, 40);
+            this.comboBox2.Size = new System.Drawing.Size(228, 34);
             this.comboBox2.TabIndex = 8;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -106,10 +112,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderID,
+            this.podetail_id,
+            this.product_id,
             this.Product,
             this.Quantity});
             this.dataGridView1.Location = new System.Drawing.Point(50, 239);
@@ -118,6 +127,41 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(664, 210);
             this.dataGridView1.TabIndex = 24;
+            // 
+            // OrderID
+            // 
+            this.OrderID.DataPropertyName = "purchase_order_id";
+            this.OrderID.HeaderText = "Order ID";
+            this.OrderID.MinimumWidth = 10;
+            this.OrderID.Name = "OrderID";
+            // 
+            // podetail_id
+            // 
+            this.podetail_id.DataPropertyName = "podetail_id";
+            this.podetail_id.HeaderText = "podetail_id";
+            this.podetail_id.MinimumWidth = 8;
+            this.podetail_id.Name = "podetail_id";
+            // 
+            // product_id
+            // 
+            this.product_id.DataPropertyName = "product_id";
+            this.product_id.HeaderText = "product_id";
+            this.product_id.MinimumWidth = 8;
+            this.product_id.Name = "product_id";
+            // 
+            // Product
+            // 
+            this.Product.DataPropertyName = "product";
+            this.Product.HeaderText = "Product";
+            this.Product.MinimumWidth = 8;
+            this.Product.Name = "Product";
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 8;
+            this.Quantity.Name = "Quantity";
             // 
             // button1
             // 
@@ -131,6 +175,7 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -144,40 +189,21 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // editbtn
             // 
             this.editbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editbtn.Location = new System.Drawing.Point(302, 170);
+            this.editbtn.Location = new System.Drawing.Point(301, 170);
             this.editbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(121, 62);
             this.editbtn.TabIndex = 27;
             this.editbtn.Text = "Done";
             this.editbtn.UseVisualStyleBackColor = false;
-            // 
-            // OrderID
-            // 
-            this.OrderID.HeaderText = "Order ID";
-            this.OrderID.MinimumWidth = 10;
-            this.OrderID.Name = "OrderID";
-            this.OrderID.Width = 130;
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Product";
-            this.Product.MinimumWidth = 8;
-            this.Product.Name = "Product";
-            this.Product.Width = 130;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 8;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 130;
+            this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
             // 
             // AddOrderProducts
             // 
@@ -217,6 +243,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button editbtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn podetail_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }

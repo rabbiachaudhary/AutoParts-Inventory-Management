@@ -68,6 +68,7 @@ namespace FinalProjectG27.Views
 
         private void addbtn_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             string fname = textBox4.Text;
             string lname = textBox3.Text;
             string contact = textBox1.Text;
@@ -79,6 +80,9 @@ namespace FinalProjectG27.Views
 
             MessageBox.Show("Staff added successfully");
             this.Close();
+=======
+
+>>>>>>> Stashed changes
         }
     }
 }

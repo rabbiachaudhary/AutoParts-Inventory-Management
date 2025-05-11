@@ -1,6 +1,6 @@
 ﻿namespace FinalProjectG27.Views
 {
-    partial class AddEmployee
+    partial class AddEmployeee
     {
         /// <summary>
         /// Required designer variable.
@@ -32,18 +32,18 @@
             this.add = new System.Windows.Forms.Label();
             this.addbtn = new System.Windows.Forms.Button();
             this.editbtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.status = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.address = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fname = new System.Windows.Forms.TextBox();
+            this.lname = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.contact = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +51,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.add);
-            this.panel1.Location = new System.Drawing.Point(0, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(687, 49);
-            this.panel1.TabIndex = 22;
+            this.panel1.TabIndex = 37;
             // 
             // add
             // 
@@ -72,10 +72,10 @@
             this.addbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addbtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addbtn.Location = new System.Drawing.Point(265, 322);
+            this.addbtn.Location = new System.Drawing.Point(265, 336);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(141, 60);
-            this.addbtn.TabIndex = 36;
+            this.addbtn.TabIndex = 51;
             this.addbtn.Text = "Add";
             this.addbtn.UseVisualStyleBackColor = false;
             this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
@@ -85,125 +85,128 @@
             this.editbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editbtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editbtn.Location = new System.Drawing.Point(265, 334);
+            this.editbtn.Location = new System.Drawing.Point(265, 348);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(141, 60);
-            this.editbtn.TabIndex = 35;
+            this.editbtn.TabIndex = 50;
             this.editbtn.Text = "Edit";
             this.editbtn.UseVisualStyleBackColor = false;
             this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
             // 
-            // comboBox1
+            // status
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(395, 249);
-            this.comboBox1.MaximumSize = new System.Drawing.Size(1000, 0);
-            this.comboBox1.MinimumSize = new System.Drawing.Size(100, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(238, 24);
-            this.comboBox1.TabIndex = 34;
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
+            "active",
+            "inactive"});
+            this.status.Location = new System.Drawing.Point(395, 263);
+            this.status.MaximumSize = new System.Drawing.Size(1000, 0);
+            this.status.MinimumSize = new System.Drawing.Size(100, 0);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(238, 24);
+            this.status.TabIndex = 49;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(391, 227);
+            this.label6.Location = new System.Drawing.Point(391, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 33;
+            this.label6.TabIndex = 48;
             this.label6.Text = "Status";
             // 
-            // textBox5
+            // address
             // 
-            this.textBox5.Location = new System.Drawing.Point(59, 249);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(238, 67);
-            this.textBox5.TabIndex = 32;
+            this.address.Location = new System.Drawing.Point(59, 263);
+            this.address.Multiline = true;
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(238, 67);
+            this.address.TabIndex = 47;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 227);
+            this.label5.Location = new System.Drawing.Point(55, 241);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 19);
-            this.label5.TabIndex = 31;
+            this.label5.TabIndex = 46;
             this.label5.Text = "Address";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(391, 151);
+            this.label4.Location = new System.Drawing.Point(391, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
-            this.label4.TabIndex = 30;
+            this.label4.TabIndex = 45;
             this.label4.Text = "Contact";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 151);
+            this.label2.Location = new System.Drawing.Point(55, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 29;
+            this.label2.TabIndex = 44;
             this.label2.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(391, 77);
+            this.label3.Location = new System.Drawing.Point(391, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 19);
-            this.label3.TabIndex = 28;
+            this.label3.TabIndex = 43;
             this.label3.Text = "Last Name ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 77);
+            this.label1.Location = new System.Drawing.Point(55, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 19);
-            this.label1.TabIndex = 27;
+            this.label1.TabIndex = 42;
             this.label1.Text = "First Name ";
             // 
-            // textBox4
+            // fname
             // 
-            this.textBox4.Location = new System.Drawing.Point(59, 99);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(238, 39);
-            this.textBox4.TabIndex = 26;
+            this.fname.Location = new System.Drawing.Point(59, 113);
+            this.fname.Multiline = true;
+            this.fname.Name = "fname";
+            this.fname.Size = new System.Drawing.Size(238, 39);
+            this.fname.TabIndex = 41;
             // 
-            // textBox3
+            // lname
             // 
-            this.textBox3.Location = new System.Drawing.Point(395, 99);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(238, 39);
-            this.textBox3.TabIndex = 25;
+            this.lname.Location = new System.Drawing.Point(395, 113);
+            this.lname.Multiline = true;
+            this.lname.Name = "lname";
+            this.lname.Size = new System.Drawing.Size(238, 39);
+            this.lname.TabIndex = 40;
             // 
-            // textBox2
+            // email
             // 
-            this.textBox2.Location = new System.Drawing.Point(59, 173);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 39);
-            this.textBox2.TabIndex = 24;
+            this.email.Location = new System.Drawing.Point(59, 187);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(238, 39);
+            this.email.TabIndex = 39;
             // 
-            // textBox1
+            // contact
             // 
-            this.textBox1.Location = new System.Drawing.Point(395, 173);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 39);
-            this.textBox1.TabIndex = 23;
+            this.contact.Location = new System.Drawing.Point(395, 187);
+            this.contact.Multiline = true;
+            this.contact.Name = "contact";
+            this.contact.Size = new System.Drawing.Size(238, 39);
+            this.contact.TabIndex = 38;
             // 
-            // AddEmployee
+            // AddEmployeee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,22 +214,22 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.editbtn);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.status);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.address);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Name = "AddEmployee";
+            this.Controls.Add(this.fname);
+            this.Controls.Add(this.lname);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.contact);
+            this.Name = "AddEmployeee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEmployee";
-            this.Load += new System.EventHandler(this.AddEmployee_Load);
+            this.Text = "AddEmploe";
+            this.Load += new System.EventHandler(this.AddEmploe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,17 +243,17 @@
         private System.Windows.Forms.Label add;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.Button editbtn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox status;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox fname;
+        private System.Windows.Forms.TextBox lname;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox contact;
     }
 }

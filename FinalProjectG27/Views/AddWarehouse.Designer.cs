@@ -33,13 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.editbtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.codetxt = new System.Windows.Forms.TextBox();
+            this.addresstxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.citytxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.nametxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.add.AutoSize = true;
             this.add.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.add.Location = new System.Drawing.Point(248, 8);
+            this.add.Location = new System.Drawing.Point(232, 9);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(190, 32);
             this.add.TabIndex = 20;
@@ -80,12 +80,13 @@
             this.editbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editbtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editbtn.Location = new System.Drawing.Point(275, 304);
+            this.editbtn.Location = new System.Drawing.Point(275, 291);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(141, 60);
             this.editbtn.TabIndex = 41;
             this.editbtn.Text = "Edit";
             this.editbtn.UseVisualStyleBackColor = false;
+            this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
             // 
             // addbtn
             // 
@@ -98,22 +99,23 @@
             this.addbtn.TabIndex = 40;
             this.addbtn.Text = "Add";
             this.addbtn.UseVisualStyleBackColor = false;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
-            // textBox1
+            // codetxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(379, 189);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 39);
-            this.textBox1.TabIndex = 39;
+            this.codetxt.Location = new System.Drawing.Point(379, 189);
+            this.codetxt.Multiline = true;
+            this.codetxt.Name = "codetxt";
+            this.codetxt.Size = new System.Drawing.Size(238, 39);
+            this.codetxt.TabIndex = 39;
             // 
-            // textBox5
+            // addresstxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(63, 189);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(238, 67);
-            this.textBox5.TabIndex = 38;
+            this.addresstxt.Location = new System.Drawing.Point(63, 189);
+            this.addresstxt.Multiline = true;
+            this.addresstxt.Name = "addresstxt";
+            this.addresstxt.Size = new System.Drawing.Size(238, 67);
+            this.addresstxt.TabIndex = 38;
             // 
             // label5
             // 
@@ -135,13 +137,13 @@
             this.label4.TabIndex = 36;
             this.label4.Text = "Postal Code";
             // 
-            // textBox3
+            // citytxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(379, 107);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(238, 39);
-            this.textBox3.TabIndex = 35;
+            this.citytxt.Location = new System.Drawing.Point(379, 107);
+            this.citytxt.Multiline = true;
+            this.citytxt.Name = "citytxt";
+            this.citytxt.Size = new System.Drawing.Size(238, 39);
+            this.citytxt.TabIndex = 35;
             // 
             // label3
             // 
@@ -153,13 +155,13 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "City";
             // 
-            // textBox4
+            // nametxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(63, 107);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(238, 39);
-            this.textBox4.TabIndex = 33;
+            this.nametxt.Location = new System.Drawing.Point(63, 107);
+            this.nametxt.Multiline = true;
+            this.nametxt.Name = "nametxt";
+            this.nametxt.Size = new System.Drawing.Size(238, 39);
+            this.nametxt.TabIndex = 33;
             // 
             // label2
             // 
@@ -179,13 +181,13 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.editbtn);
             this.Controls.Add(this.addbtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.codetxt);
+            this.Controls.Add(this.addresstxt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.citytxt);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.nametxt);
             this.Controls.Add(this.label2);
             this.Name = "AddWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,13 +207,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button editbtn;
         private System.Windows.Forms.Button addbtn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox codetxt;
+        private System.Windows.Forms.TextBox addresstxt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox citytxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox nametxt;
         private System.Windows.Forms.Label label2;
     }
 }

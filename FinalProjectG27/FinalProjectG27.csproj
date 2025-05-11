@@ -98,15 +98,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="databasehelper.cs" />
+    <Compile Include="Controllers\CategoryDL.cs" />
+    <Compile Include="Controllers\credentialsDL.cs" />
+    <Compile Include="Controllers\CustomerDL.cs" />
+    <Compile Include="Controllers\ProductsDL.cs" />
+    <Compile Include="Controllers\PurchaseOrderDL.cs" />
+    <Compile Include="Controllers\PurchaseOrderProductsDL.cs" />
+    <Compile Include="Controllers\SaleOrderDL.cs" />
+    <Compile Include="Controllers\SaleOrderProductsDL.cs" />
+    <Compile Include="Controllers\SupplierDL.cs" />
+    <Compile Include="Database\databasehelper.cs" />
+    <Compile Include="Models\CategoryBL.cs" />
+    <Compile Include="Models\credentialsBL.cs" />
+    <Compile Include="Models\CustomerBL.cs" />
+    <Compile Include="Models\ProductsBL.cs" />
     <Compile Include="Models\locationsBL.cs" />
+    <Compile Include="Models\PurchaseOrderBL.cs" />
+    <Compile Include="Models\PurchaseOrderProductsBL.cs" />
+    <Compile Include="Models\SaleOrderBL.cs" />
+    <Compile Include="Models\SaleOrderProductsBL.cs" />
     <Compile Include="Models\staffBL.cs" />
     <Compile Include="Controllers\staffDL.cs" />
-    <Compile Include="Views\AddEmployee.cs">
+    <Compile Include="Models\SupplierBL.cs" />
+    <Compile Include="Views\AddEmployeee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AddEmployee.Designer.cs">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
+    <Compile Include="Views\AddEmployeee.Designer.cs">
+      <DependentUpon>AddEmployeee.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AddOrderProducts.cs">
       <SubType>Form</SubType>
@@ -174,6 +192,12 @@
     <Compile Include="Views\EmployeesMain.Designer.cs">
       <DependentUpon>EmployeesMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +235,12 @@
     </Compile>
     <Compile Include="Views\PurchaseOrderMain.Designer.cs">
       <DependentUpon>PurchaseOrderMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SaleOrdersMain.cs">
       <SubType>Form</SubType>
@@ -256,8 +286,8 @@
     </Compile>
     <Compile Include="Models\warehousesBL.cs" />
     <Compile Include="Controllers\warehousesDL.cs" />
-    <EmbeddedResource Include="Views\AddEmployee.resx">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddEmployeee.resx">
+      <DependentUpon>AddEmployeee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddOrderProducts.resx">
       <DependentUpon>AddOrderProducts.cs</DependentUpon>
@@ -291,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeesMain.resx">
       <DependentUpon>EmployeesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainDashBoard.resx">
       <DependentUpon>MainDashBoard.cs</DependentUpon>
@@ -357,7 +390,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Database\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
@@ -379,6 +411,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\forklift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\auto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
