@@ -609,7 +609,16 @@ namespace FinalProjectG27
 
         private void reports_Click(object sender, EventArgs e)
         {
-            
+
+            Reports purchase = new Reports();
+            purchase.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                purchase.Size = this.Size;
+                purchase.Location = this.Location;
+            }
+            purchase.Show();
+            this.Hide();
         }
 
         private void product_Click(object sender, EventArgs e)

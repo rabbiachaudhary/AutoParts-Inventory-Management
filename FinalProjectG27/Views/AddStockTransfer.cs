@@ -120,10 +120,5 @@ namespace FinalProjectG27.Views
         {
 
         }
-
-        private void addbtn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
