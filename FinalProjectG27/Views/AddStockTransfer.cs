@@ -36,5 +36,15 @@ namespace FinalProjectG27.Views
                 editbtn.Visible = true;
             }
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

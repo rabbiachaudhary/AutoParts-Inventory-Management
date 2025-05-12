@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using FinalProjectG27.Database;
 using FinalProjectG27.Models;
 
@@ -16,9 +18,9 @@ namespace FinalProjectG27.Controllers
             string query = @"
                                  SELECT 
                                    po.purchase_order_id , 
-                                   w.warehouse_name, 
+                                   w.warehouse_name,l.address as address ,
                                    CONCAT(COALESCE(s.first_name, ''), ' ', COALESCE(s.last_name, '')) AS Supplier,
-                                   po.payment_method_id as payment_id,
+                                   s.contact as contact ,po.payment_method_id as payment_id,
                                    po.supplier_id as supplier_id , po.warehouse_id as warehouse_id,
                               CASE
                                    WHEN po.payment_method_id = 4 THEN 'Cash'
@@ -29,6 +31,7 @@ namespace FinalProjectG27.Controllers
                                    FROM purchase_orders po 
                                    JOIN suppliers s ON po.supplier_id = s.supplier_id 
                                    JOIN warehouses w ON po.warehouse_id = w.warehouse_id
+                                   join locations l on l.location_id = w.location_id
                                 ";
             return databasehelper.GetDataTable(query);
 
@@ -64,19 +67,30 @@ namespace FinalProjectG27.Controllers
 
 
             };
-            int newOrderId = Convert.ToInt32(databasehelper.GetSingleInt(query, parameter));
-            return newOrderId;
+            try
+            {
+                int newOrderId = Convert.ToInt32(databasehelper.GetSingleInt(query, parameter));
+                return newOrderId;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding product: " + ex.Message);
+                return 0;
+            }
+
         }
         public static void UpdatePurchaseOrder(PurchaseOrderBL purchase, int purchaseID)
         {
-            string query = @"update purchase_orders 
+            try
+            {
+                string query = @"update purchase_orders 
                              set supplier_id = @supplierid, 
                                  warehouse_id = @warehouseid, 
                                  payment_method_id = @paymentid, 
                                  date = @date, 
                                  status = @status                                 
                              where purchase_order_id = @id";
-            var parameter = new Dictionary<string, object>
+                var parameter = new Dictionary<string, object>
             {
                 {"@supplierid", purchase.SupplierID},
                 {"@warehouseid", purchase.WarehouseID },
@@ -85,7 +99,21 @@ namespace FinalProjectG27.Controllers
                 {"@status", purchase.Status},
                 {"@id", purchaseID }
             };
-            databasehelper.ExecuteDML(query, parameter);
+                databasehelper.ExecuteDML(query, parameter);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (InvalidOperationException invOpEx)
+            {
+                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static void DeleteOrder(int id)
         {
@@ -108,9 +136,9 @@ namespace FinalProjectG27.Controllers
                 query = @"
                                  SELECT 
                                    po.purchase_order_id , 
-                                   w.warehouse_name, 
+                                   w.warehouse_name, l.address as address ,
                                    CONCAT(COALESCE(s.first_name, ''), ' ', COALESCE(s.last_name, '')) AS Supplier,
-                                   po.payment_method_id as payment_id,
+                                   s.contact as contact,po.payment_method_id as payment_id,
                                    po.supplier_id as supplier_id , po.warehouse_id as warehouse_id,
                               CASE
                                    WHEN po.payment_method_id = 4 THEN 'Cash'
@@ -121,6 +149,7 @@ namespace FinalProjectG27.Controllers
                                    FROM purchase_orders po 
                                    JOIN suppliers s ON po.supplier_id = s.supplier_id 
                                    JOIN warehouses w ON po.warehouse_id = w.warehouse_id
+                                   join locations l on l.location_id = w.location_id
                                 ";
             }
 
@@ -128,11 +157,11 @@ namespace FinalProjectG27.Controllers
             {
 
                 query = @"
-                                 SELECT 
-                                   po.purchase_order_id ,
-                                   w.warehouse_name, 
+                                SELECT 
+                                   po.purchase_order_id , 
+                                   w.warehouse_name, l.address as address ,
                                    CONCAT(COALESCE(s.first_name, ''), ' ', COALESCE(s.last_name, '')) AS Supplier,
-                                   po.payment_method_id as payment_id,
+                                   s.contact as contact,po.payment_method_id as payment_id,
                                    po.supplier_id as supplier_id , po.warehouse_id as warehouse_id,
                               CASE
                                    WHEN po.payment_method_id = 4 THEN 'Cash'
@@ -143,6 +172,7 @@ namespace FinalProjectG27.Controllers
                                    FROM purchase_orders po
                                    JOIN suppliers s ON po.supplier_id = s.supplier_id 
                                    JOIN warehouses w ON po.warehouse_id = w.warehouse_id
+                                   join locations l on l.location_id = w.location_id
                                    where  po.purchase_order_id LIKE '%" + search + "%'";
 
 

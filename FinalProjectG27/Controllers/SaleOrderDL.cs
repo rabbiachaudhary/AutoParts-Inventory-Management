@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using FinalProjectG27.Database;
 using FinalProjectG27.Models;
 
@@ -17,6 +19,7 @@ namespace FinalProjectG27.Controllers
                                  SELECT 
                                    s.sale_order_id ,
                                    CONCAT(COALESCE(c.first_name, ''), ' ', COALESCE(c.last_name, '')) AS Customer,
+                                   c.contact,
                                    s.payment_method_id as payment_id,
                                    s.customer_id,
                               CASE
@@ -51,18 +54,29 @@ namespace FinalProjectG27.Controllers
                 { "@customerid", sale.CustomerID },
 
             };
-            int newOrderId = Convert.ToInt32(databasehelper.GetSingleInt(query, parameter));
-            return newOrderId;
+            try
+            {
+                int newOrderId = Convert.ToInt32(databasehelper.GetSingleInt(query, parameter));
+                return newOrderId;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding product: " + ex.Message);
+                return 0;
+            }
+
         }
         public static void UpdateSaleOrder(SaleOrderBL sale, int SaleID)
         {
-            string query = @"update sale_orders 
+            try
+            {
+                string query = @"update sale_orders 
                              set customer_id = @customerid,                                
                                  payment_method_id = @paymentid, 
                                  date = @date, 
                                  status = @status                                 
                              where sale_order_id = @id";
-            var parameter = new Dictionary<string, object>
+                var parameter = new Dictionary<string, object>
             {
                 {"@customerid", sale.CustomerID},
                 {"@paymentid", sale .PaymentID },
@@ -70,7 +84,21 @@ namespace FinalProjectG27.Controllers
                 {"@status",sale.Status},
                 {"@id", SaleID }
             };
-            databasehelper.ExecuteDML(query, parameter);
+                databasehelper.ExecuteDML(query, parameter);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (InvalidOperationException invOpEx)
+            {
+                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static void DeleteOrder(int id)
         {
@@ -93,6 +121,7 @@ namespace FinalProjectG27.Controllers
                                  SELECT 
                                    s.sale_order_id ,
                                    CONCAT(COALESCE(c.first_name, ''), ' ', COALESCE(c.last_name, '')) AS Customer,
+                                   c.contact,
                                    s.payment_method_id as payment_id,
                                    s.customer_id,
                               CASE
@@ -112,6 +141,7 @@ namespace FinalProjectG27.Controllers
                                  SELECT 
                                    s.sale_order_id ,
                                    CONCAT(COALESCE(c.first_name, ''), ' ', COALESCE(c.last_name, '')) AS Customer,
+                                   c.contact,
                                    s.payment_method_id as payment_id,
                                    s.customer_id,
                               CASE
