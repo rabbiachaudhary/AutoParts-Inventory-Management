@@ -106,6 +106,7 @@
     <Compile Include="Controllers\PurchaseOrderProductsDL.cs" />
     <Compile Include="Controllers\SaleOrderDL.cs" />
     <Compile Include="Controllers\SaleOrderProductsDL.cs" />
+    <Compile Include="Controllers\StockTransferDL.cs" />
     <Compile Include="Controllers\SupplierDL.cs" />
     <Compile Include="Models\CategoryBL.cs" />
     <Compile Include="Models\credentialsBL.cs" />
@@ -119,6 +120,8 @@
     <Compile Include="Models\SaleOrderProductsBL.cs" />
     <Compile Include="Models\staffBL.cs" />
     <Compile Include="Controllers\staffDL.cs" />
+    <Compile Include="Models\stocks.cs" />
+    <Compile Include="Models\StockTransferBL.cs" />
     <Compile Include="Models\SupplierBL.cs" />
     <Compile Include="Views\AddEmployeee.cs">
       <SubType>Form</SubType>
