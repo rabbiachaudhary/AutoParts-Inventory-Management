@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Addbtn = new System.Windows.Forms.Button();
             this.updatebtn = new System.Windows.Forms.Button();
-            this.status = new System.Windows.Forms.ComboBox();
+            this.Status = new System.Windows.Forms.ComboBox();
             this.statuslabel = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.addproductbtn = new System.Windows.Forms.Label();
@@ -81,20 +81,21 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(424, 127);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(261, 40);
+            this.comboBox2.Size = new System.Drawing.Size(261, 34);
             this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox3
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(52, 231);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(263, 40);
+            this.comboBox3.Size = new System.Drawing.Size(263, 34);
             this.comboBox3.TabIndex = 8;
             // 
             // label2
@@ -165,17 +166,18 @@
             this.updatebtn.UseVisualStyleBackColor = false;
             this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
-            // status
+            // Status
             // 
-            this.status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status.FormattingEnabled = true;
-            this.status.Items.AddRange(new object[] {
+            this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status.FormattingEnabled = true;
+            this.Status.Items.AddRange(new object[] {
+            "pending",
             "completed",
             "cancelled"});
-            this.status.Location = new System.Drawing.Point(257, 320);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(227, 37);
-            this.status.TabIndex = 24;
+            this.Status.Location = new System.Drawing.Point(257, 320);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(227, 34);
+            this.Status.TabIndex = 24;
             // 
             // statuslabel
             // 
@@ -189,11 +191,11 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(52, 127);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 40);
+            this.comboBox1.Size = new System.Drawing.Size(263, 34);
             this.comboBox1.TabIndex = 26;
             // 
             // addproductbtn
@@ -227,7 +229,7 @@
             this.Controls.Add(this.addproductbtn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.statuslabel);
-            this.Controls.Add(this.status);
+            this.Controls.Add(this.Status);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.Addbtn);
             this.Controls.Add(this.label4);
@@ -263,7 +265,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.Button updatebtn;
-        private System.Windows.Forms.ComboBox status;
+        private System.Windows.Forms.ComboBox Status;
         private System.Windows.Forms.Label statuslabel;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label addproductbtn;

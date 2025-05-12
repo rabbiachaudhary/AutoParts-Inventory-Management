@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using FinalProjectG27.Database;
 using MySql.Data.MySqlClient;
 
 namespace FinalProjectG27

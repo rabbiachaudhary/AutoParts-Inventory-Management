@@ -108,6 +108,10 @@
     <Compile Include="databasehelper.cs" />
     <Compile Include="Models\ProductsBL.cs" />
     <Compile Include="Models\locationsBL.cs" />
+    <Compile Include="Models\PurchaseOrderBL.cs" />
+    <Compile Include="Models\PurchaseOrderProductsBL.cs" />
+    <Compile Include="Models\SaleOrderBL.cs" />
+    <Compile Include="Models\SaleOrderProductsBL.cs" />
     <Compile Include="Models\staffBL.cs" />
     <Compile Include="Controllers\staffDL.cs" />
     <Compile Include="Views\AddEmployeee.cs">
@@ -380,7 +384,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Database\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
