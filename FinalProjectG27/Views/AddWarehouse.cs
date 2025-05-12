@@ -56,30 +56,45 @@ namespace FinalProjectG27.Views
         private void editbtn_Click(object sender, EventArgs e)
         {
 
-            string Name = nametxt.Text;
-            string City = citytxt.Text;
-            string Address = addresstxt.Text;
-            string Code = codetxt.Text;
+            string Name = nametxt.Text.Trim();
+            string City = citytxt.Text.Trim();
+            string Address = addresstxt.Text.Trim();
+            string Code = codetxt.Text.Trim();
 
+            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(City) ||
+                string.IsNullOrEmpty(Address) || string.IsNullOrEmpty(Code))
+            {
+                MessageBox.Show("All fields must be filled out.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            warehousesBL w=new warehousesBL(Name, Address,City,Code);
+            warehousesBL w = new warehousesBL(Name, Address, City, Code);
             warehousesDL.UpdateWarehouses(w, Id);
             main.LoadData();
             MessageBox.Show("Updated Successfully");
             this.Close();
+
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
 
-            string Name = nametxt.Text;
-            string City = citytxt.Text;
-            string Address = addresstxt.Text;
-            string Code = codetxt.Text;
 
+            string Name = nametxt.Text.Trim();
+            string City = citytxt.Text.Trim();
+            string Address = addresstxt.Text.Trim();
+            string Code = codetxt.Text.Trim();
+
+            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(City) ||
+                string.IsNullOrEmpty(Address) || string.IsNullOrEmpty(Code))
+            {
+                MessageBox.Show("Please fill out all fields before submitting.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
 
             warehousesBL w = new warehousesBL(Name, Address, City, Code);
             bool isAdd = warehousesDL.AddWarehouse(w);
+
             if (isAdd)
             {
                 MessageBox.Show("Added Successfully");
@@ -88,7 +103,7 @@ namespace FinalProjectG27.Views
             }
             else
             {
-                MessageBox.Show("Error. Warehouse wasnt added.");
+                MessageBox.Show("Error. Warehouse wasn't added.");
             }
 
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProjectG27.Models;
 
 namespace FinalProjectG27.Views
 {
@@ -15,6 +16,19 @@ namespace FinalProjectG27.Views
         public ShopStockMain()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public DataTable LoadData()
+        {
+            DataTable dt = stocks.getShopStock();
+            dataGridView1.DataSource = dt;
+            return dt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
