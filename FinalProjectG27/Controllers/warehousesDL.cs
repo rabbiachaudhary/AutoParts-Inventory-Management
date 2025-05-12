@@ -207,5 +207,32 @@ namespace FinalProjectG27
                 return false;
             }
         }
+        public static DataTable GetSearchData(string search)
+        {
+            DataTable dt2 = new DataTable();
+            string query;
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+
+                query = @"SELECT w.warehouse_id, w.warehouse_name, 
+                                   l.address, l.city, l.postal_code, l.location_id
+                            FROM warehouses w
+                            JOIN locations l ON w.location_id = l.location_id
+                            ORDER BY w.warehouse_name";
+            }
+
+            else
+            {
+                query = "SELECT w.warehouse_id, w.warehouse_name, l.address, l.city, l.postal_code, l.location_id " +
+                                  "FROM warehouses w " +
+                                  "JOIN locations l ON w.location_id = l.location_id " +
+                                  "WHERE w.warehouse_name LIKE '%" + search + "%' " +
+                                  "ORDER BY w.warehouse_name";
+
+            }
+            return databasehelper.GetDataTable(query);
+        }
+
     }
 }

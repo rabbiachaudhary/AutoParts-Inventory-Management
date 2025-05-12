@@ -70,6 +70,11 @@ namespace FinalProjectG27.Views
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedValue == null || comboBox2.SelectedValue == null)
+               
+            {
+                MessageBox.Show("Please Fill All details");
+            }
             int customerId = int.Parse(comboBox1.SelectedValue.ToString());
             int paymentId = int.Parse(comboBox2.SelectedValue.ToString());
             DateTime date = dateTimePicker1.Value.Date;
@@ -89,7 +94,7 @@ namespace FinalProjectG27.Views
             }
             else
             {
-                MessageBox.Show("Failed to create Purchase Order.");
+                MessageBox.Show("Failed to create Sale Order.");
             }
 
         }
@@ -110,6 +115,11 @@ namespace FinalProjectG27.Views
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedValue == null || comboBox2.SelectedValue == null
+                || combo.SelectedItem == null)
+            {
+                MessageBox.Show("Please Fill All details");
+            }
             int CustomerId = int.Parse(comboBox1.SelectedValue.ToString());
             int paymentId = int.Parse(comboBox2.SelectedValue.ToString()); 
             DateTime date = dateTimePicker1.Value.Date;

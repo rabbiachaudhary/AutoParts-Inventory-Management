@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using FinalProjectG27.Database;
 using FinalProjectG27.Models;
 
@@ -27,8 +29,9 @@ namespace FinalProjectG27.Controllers
             return databasehelper.GetDataTable(query);
 
         }
-        public static void AddOrderProducts(SaleOrderProductsBL sale)
+        public static bool AddOrderProducts(SaleOrderProductsBL sale)
         {
+
             string query = @"insert into sale_order_details (sale_order_id,product_id, quantity) values (@saleid,@productid,@quantity)";
             var parameter = new Dictionary<string, object>
             {
@@ -37,16 +40,39 @@ namespace FinalProjectG27.Controllers
                 { "@quantity", sale.Quantity},
 
             };
-            databasehelper.ExecuteDML(query, parameter);
+            try
+            {
+                databasehelper.ExecuteDML(query, parameter);
+                return true;
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+            catch (InvalidOperationException invOpEx)
+            {
+                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
         }
         public static void UpdateOrderProducts(SaleOrderProductsBL sale, int sodetailId)
         {
-            string query = @"update sale_order_details
+            try
+            {
+                string query = @"update sale_order_details
                              set
                                  product_id = @productid, 
                                  quantity = @quantity                        
                              where sodetail_id = @id";
-            var parameter = new Dictionary<string, object>
+                var parameter = new Dictionary<string, object>
             {
 
                 { "@productid", sale.ProductID },
@@ -54,7 +80,21 @@ namespace FinalProjectG27.Controllers
                 { "@id" , sodetailId }
 
             };
-            databasehelper.ExecuteDML(query, parameter);
+                databasehelper.ExecuteDML(query, parameter);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (InvalidOperationException invOpEx)
+            {
+                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static void DeleteOrder(int id)
         {

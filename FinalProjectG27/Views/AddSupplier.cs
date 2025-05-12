@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProjectG27.Controllers;
 using FinalProjectG27.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FinalProjectG27.Views
 {
@@ -60,10 +61,51 @@ namespace FinalProjectG27.Views
             string email = textBox4.Text;
             string address = textBox5.Text;
 
+            if (string.IsNullOrWhiteSpace(firstname))
+            {
+                MessageBox.Show("First name is required.");
+                return;
+            }
+
+            // Last Name
+            if (string.IsNullOrWhiteSpace(lname))
+            {
+                MessageBox.Show("Last name is required.");
+                return;
+            }
+
+            // Email
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Email is required.");
+                return;
+            }
+
+            // Contact
+            if (string.IsNullOrWhiteSpace(contact))
+            {
+                MessageBox.Show("Contact number is required.");
+                return;
+            }
+
+            // Address
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                MessageBox.Show("Address is required.");
+                return;
+            }
+
             SupplierBL supplier = new SupplierBL(firstname, lname, contact, email, address);
-            SupplierDL.AddSupplier(supplier);
-            MessageBox.Show("Supplier added successfully");
-            this.supplier.loaddata();
+            bool flag = SupplierDL.AddSupplier(supplier);
+            if (flag)
+            {
+                MessageBox.Show("Supplier added successfully");
+                this.supplier.loaddata();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
@@ -73,6 +115,40 @@ namespace FinalProjectG27.Views
             string contact = textBox3.Text;
             string email = textBox4.Text;
             string address = textBox5.Text;
+
+            if (string.IsNullOrWhiteSpace(firstname))
+            {
+                MessageBox.Show("First name is required.");
+                return;
+            }
+
+            // Last Name
+            if (string.IsNullOrWhiteSpace(lname))
+            {
+                MessageBox.Show("Last name is required.");
+                return;
+            }
+
+            // Email
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Email is required.");
+                return;
+            }
+
+            // Contact
+            if (string.IsNullOrWhiteSpace(contact))
+            {
+                MessageBox.Show("Contact number is required.");
+                return;
+            }
+
+            // Address
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                MessageBox.Show("Address is required.");
+                return;
+            }
 
             SupplierBL supplier = new SupplierBL(firstname , lname, contact,email ,address);
             SupplierDL.UpdateSupplier(supplier , supplierId);

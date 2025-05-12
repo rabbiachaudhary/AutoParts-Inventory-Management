@@ -146,6 +146,7 @@
             this.delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.delete.TabIndex = 4;
             this.delete.TabStop = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // textBox1
             // 
@@ -156,7 +157,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(935, 67);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Search here";
+            this.textBox1.Text = "Search by warehouse name";
             // 
             // panel1
             // 

@@ -35,7 +35,7 @@ namespace FinalProjectG27.Views
         {
             try
             {
-                if (dgvWarehouse.SelectedRows.Count == 0)
+                if (dgvWarehouse.SelectedRows.Count != 1)
                 {
                     MessageBox.Show("Please select a row first.", "Warning",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -92,7 +92,7 @@ namespace FinalProjectG27.Views
         {
             try
             {
-                if (dgvWarehouse.CurrentRow != null)
+                if (dgvWarehouse.CurrentRow != null && (dgvWarehouse.SelectedRows.Count == 1))
                 {
                     DialogResult confirm = MessageBox.Show("Are you sure you want to delete this record?",
                                                            "Confirm Deletion",
@@ -238,6 +238,15 @@ namespace FinalProjectG27.Views
             this.Hide();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+            string search = textBox1.Text;
+            DataTable searchData = warehousesDL.GetSearchData(search);
+            if (searchData != null)
+            {
+                dgvWarehouse.DataSource = searchData;
+            }
+        }
     }
 }

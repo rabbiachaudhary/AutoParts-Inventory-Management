@@ -68,12 +68,13 @@
             this.addbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addbtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addbtn.Location = new System.Drawing.Point(265, 292);
+            this.addbtn.Location = new System.Drawing.Point(265, 311);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(141, 60);
             this.addbtn.TabIndex = 51;
             this.addbtn.Text = "Add";
             this.addbtn.UseVisualStyleBackColor = false;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // editbtn
             // 
@@ -86,6 +87,7 @@
             this.editbtn.TabIndex = 50;
             this.editbtn.Text = "Edit";
             this.editbtn.UseVisualStyleBackColor = false;
+            this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
             // 
             // comboBox1
             // 

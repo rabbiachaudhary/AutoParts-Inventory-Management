@@ -73,6 +73,11 @@ namespace FinalProjectG27.Views
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedValue == null || comboBox2.SelectedValue == null
+                 || comboBox3.SelectedValue == null || Status.SelectedItem == null)
+            {
+                MessageBox.Show("Please Fill All details");
+            }
             int supplierId = int.Parse(comboBox1.SelectedValue.ToString());
             int warehouseId = int.Parse(comboBox2.SelectedValue.ToString());
             int paymentId = int.Parse(comboBox3.SelectedValue.ToString());
@@ -94,6 +99,11 @@ namespace FinalProjectG27.Views
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedValue == null || comboBox2.SelectedValue == null
+                 || comboBox3.SelectedValue == null )
+            {
+                MessageBox.Show("Please Fill All details");
+            }
             int supplierId = int.Parse(comboBox1.SelectedValue.ToString());
             int warehouseId = int.Parse(comboBox2.SelectedValue.ToString());
             int paymentId = int.Parse(comboBox3.SelectedValue.ToString());

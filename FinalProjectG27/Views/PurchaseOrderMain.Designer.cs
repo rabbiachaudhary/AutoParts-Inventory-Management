@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseOrderMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -90,7 +90,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Warehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WarehouseAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payment_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -634,6 +636,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -734,8 +737,9 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(149, 86);
             this.label11.TabIndex = 10;
-            this.label11.Text = "Payments";
+            this.label11.Text = "Suppliers";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label9
             // 
@@ -751,6 +755,7 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -764,8 +769,9 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(139, 86);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Purchase";
+            this.label10.Text = "Products";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label12
             // 
@@ -781,6 +787,7 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Reports";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label5
             // 
@@ -796,6 +803,7 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Employees";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -809,8 +817,9 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 86);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Products";
+            this.label4.Text = "Home";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label8
             // 
@@ -826,6 +835,7 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Stock";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -839,8 +849,9 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 86);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Orders";
+            this.label7.Text = "Customers";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -855,8 +866,9 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(194, 86);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Manufacturer";
+            this.label6.Text = "Warehouse";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tableLayoutPanel19
             // 
@@ -980,33 +992,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderid,
             this.Warehouse,
+            this.WarehouseAddress,
             this.Supplier,
+            this.contact,
             this.PaymentMethod,
             this.payment_id,
             this.Date,
             this.Status,
             this.supplier_id,
             this.warehouse_id});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(6, 257);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
@@ -1033,6 +1047,14 @@
             this.Warehouse.Name = "Warehouse";
             this.Warehouse.ReadOnly = true;
             // 
+            // WarehouseAddress
+            // 
+            this.WarehouseAddress.DataPropertyName = "address";
+            this.WarehouseAddress.HeaderText = "Warehouse Address";
+            this.WarehouseAddress.MinimumWidth = 8;
+            this.WarehouseAddress.Name = "WarehouseAddress";
+            this.WarehouseAddress.ReadOnly = true;
+            // 
             // Supplier
             // 
             this.Supplier.DataPropertyName = "Supplier";
@@ -1040,6 +1062,14 @@
             this.Supplier.MinimumWidth = 6;
             this.Supplier.Name = "Supplier";
             this.Supplier.ReadOnly = true;
+            // 
+            // contact
+            // 
+            this.contact.DataPropertyName = "contact";
+            this.contact.HeaderText = "Supplier Contact";
+            this.contact.MinimumWidth = 8;
+            this.contact.Name = "contact";
+            this.contact.ReadOnly = true;
             // 
             // PaymentMethod
             // 
@@ -1204,7 +1234,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Warehouse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WarehouseAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMethod;
         private System.Windows.Forms.DataGridViewTextBoxColumn payment_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;

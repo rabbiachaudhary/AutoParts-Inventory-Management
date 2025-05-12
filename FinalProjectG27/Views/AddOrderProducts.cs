@@ -36,7 +36,7 @@ namespace FinalProjectG27.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
 
@@ -46,13 +46,25 @@ namespace FinalProjectG27.Views
                 FillDetails(podetailid, productId, quantity);
                 
             }
+            else
+            {
+                MessageBox.Show("Please Select one Row");
+            }
 
         }
 
         private void editbtn_Click(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedValue == null || textBox1.Text == null)
+            {
+                MessageBox.Show("Please Fill All Details");
+            }
             int productId = Convert.ToInt32(comboBox2.SelectedValue.ToString());
             int quantity = Convert.ToInt32(textBox1.Text);
+            if (!int.TryParse(textBox1.Text, out quantity))
+            {
+                Console.WriteLine("Invalid input! Please enter a valid number.");
+            }
             if (PodetailID > 0)
             {
                
@@ -65,16 +77,23 @@ namespace FinalProjectG27.Views
             {
 
                 PurchaseOrderProductsBL order = new PurchaseOrderProductsBL(PurchaseOrderId, productId, quantity);
-                PurchaseOrderProductsDL.AddOrderProducts(order);
-                MessageBox.Show("Product Added Successfully");
-                loaddata();
+                bool flag = PurchaseOrderProductsDL.AddOrderProducts(order);
+                if (flag)
+                {
+                    MessageBox.Show("Product Added Successfully");
+                    loaddata();
+                }
+                else
+                {
+                    return;
+                }
 
             }
         }
        
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow row = dataGridView1.SelectedRows[0];
                 int id = Convert.ToInt32(row.Cells["podetail_id"].Value);
@@ -82,6 +101,10 @@ namespace FinalProjectG27.Views
                 PurchaseOrderProductsDL.DeleteOrder(id);
                 MessageBox.Show("Product deleted successfully");
                 loaddata();
+            }
+            else
+            {
+                MessageBox.Show("Please Select one Row");
             }
         }
 
