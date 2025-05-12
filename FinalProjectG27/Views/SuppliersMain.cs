@@ -93,5 +93,10 @@ namespace FinalProjectG27.Views
         private void button9_Click(object sender, EventArgs e)
         {
         }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

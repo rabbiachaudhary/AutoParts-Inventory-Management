@@ -32,7 +32,7 @@ namespace FinalProjectG27.Views
             editbtn.Visible = false;
         }
 
-        public AddEmployeee(EmployeesMain main, int id, string LastName,string FirstName,string Contact,string Email,String Address, string Status, bool isAdd = false)
+        public AddEmployeee(EmployeesMain main, int id, string LastName,string FirstName,string Contact,string Email,String Address, string Status,string username,string pass,string role, bool isAdd = false)
         {
             InitializeComponent();
             this.main = main;
@@ -47,6 +47,9 @@ namespace FinalProjectG27.Views
             contact.Text = Contact;
             address.Text = Address;
             status.SelectedItem = Status;
+            Usernamelbl.Text=username;
+            status.SelectedItem = role;
+            passlbl.Text = pass;
         }
         private void AddEmploe_Load(object sender, EventArgs e)
         {
@@ -55,33 +58,65 @@ namespace FinalProjectG27.Views
 
         private void editbtn_Click(object sender, EventArgs e)
         {
+            string lastn = lname.Text.Trim();
+            string firstn = fname.Text.Trim();
+            string Email = email.Text.Trim();
+            string Contact = contact.Text.Trim();
+            string Address = address.Text.Trim();
+            string Status = status.SelectedItem?.ToString(); 
 
-            string lastn = lname.Text;
-            string firstn = fname.Text;
-            string Email = email.Text;
-            string Contact = contact.Text;
-            string Address= address.Text;
-            string Status= status.SelectedIndex.ToString();
+            string username = Usernamelbl.Text.Trim();
+            string pass = passlbl.Text.Trim();
+            string role = rolecmb.SelectedItem?.ToString();
 
-            staffBL Staff=new staffBL(lastn,firstn,Contact,Email,Address,Status);
-            staffDL.UpdateStaff(Staff,Id);
+            // Validation check
+            if (string.IsNullOrEmpty(lastn) || string.IsNullOrEmpty(firstn) ||
+                string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Contact) ||
+                string.IsNullOrEmpty(Address) || string.IsNullOrEmpty(Status) ||
+                string.IsNullOrEmpty(username) || string.IsNullOrEmpty(pass) ||
+                string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("All fields must be filled out.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            staffBL Staff = new staffBL(lastn, firstn, Contact, Email, Address, Status);
+            credentialsBL c = new credentialsBL(username, pass, role);
+
+            staffDL.UpdateStaff(Staff, Id, c);
             main.LoadData();
             MessageBox.Show("Updated Successfully");
             this.Close();
+
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
+            string lastn = lname.Text.Trim();
+            string firstn = fname.Text.Trim();
+            string Email = email.Text.Trim();
+            string Contact = contact.Text.Trim();
+            string Address = address.Text.Trim();
+            string Status = status.SelectedItem?.ToString();
 
-            string lastn = lname.Text;
-            string firstn = fname.Text;
-            string Email = email.Text;
-            string Contact = contact.Text;
-            string Address = address.Text;
-            string Status = status.SelectedIndex.ToString();
+            string username = Usernamelbl.Text.Trim();
+            string pass = passlbl.Text.Trim();
+            string role = rolecmb.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(lastn) || string.IsNullOrEmpty(firstn) ||
+                string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Contact) ||
+                string.IsNullOrEmpty(Address) || string.IsNullOrEmpty(Status) ||
+                string.IsNullOrEmpty(username) || string.IsNullOrEmpty(pass) ||
+                string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("All fields must be filled out.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             staffBL Staff = new staffBL(lastn, firstn, Contact, Email, Address, Status);
-            bool isAdd = staffDL.AddStaff(Staff);
+            credentialsBL c = new credentialsBL(username, pass, role);
+
+            bool isAdd = staffDL.AddStaff(Staff, c);
             if (isAdd)
             {
                 MessageBox.Show("Added Successfully");
@@ -92,6 +127,12 @@ namespace FinalProjectG27.Views
             {
                 MessageBox.Show("Error");
             }
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

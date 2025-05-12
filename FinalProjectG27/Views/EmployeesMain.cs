@@ -33,7 +33,7 @@ namespace FinalProjectG27.Views
 
         private void editpic_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count ==1)
             {
                 int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["staff_id"].Value);
 
@@ -44,10 +44,13 @@ namespace FinalProjectG27.Views
                 string address = dataGridView1.CurrentRow.Cells["Address"].Value.ToString();
                 string status = dataGridView1.CurrentRow.Cells["Status"].Value.ToString();
 
+                string username = dataGridView1.CurrentRow.Cells["username"].Value.ToString();
+                string password_hash = dataGridView1.CurrentRow.Cells["password_hash"].Value.ToString();
+                string role = dataGridView1.CurrentRow.Cells["value"].Value.ToString();
 
                 //dimForm dimForm = new dimForm();
                 //dimForm.Show();
-                AddEmployeee a = new AddEmployeee(this, id, fname, lname, contact, email, address, status, false);
+                AddEmployeee a = new AddEmployeee(this, id, fname, lname, contact, email, address, status,username,password_hash,role, false);
                 a.TopMost = true;
                 a.ShowDialog();
                 //dimForm.Close();
@@ -112,7 +115,7 @@ namespace FinalProjectG27.Views
         {
             try
             {
-                if (dataGridView1.CurrentRow != null)
+                if (dataGridView1.CurrentRow != null && dataGridView1.SelectedRows.Count == 1)
                 {
                     DialogResult confirm = MessageBox.Show("Are you sure you want to delete this record?",
                                                            "Confirm Deletion",
@@ -269,6 +272,21 @@ namespace FinalProjectG27.Views
             }
             a.Show();
             this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string search = textBox1.Text;
+            DataTable searchData = staffDL.GetSearchData(search);
+            if (searchData != null)
+            {
+                dataGridView1.DataSource = searchData;
+            }
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            string search = textBox1.Text;
         }
     }
 }
