@@ -480,6 +480,7 @@
             this.payments.TabIndex = 10;
             this.payments.Text = "Customers";
             this.payments.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.payments.Click += new System.EventHandler(this.payments_Click);
             // 
             // sales
             // 
@@ -495,6 +496,7 @@
             this.sales.TabIndex = 8;
             this.sales.Text = "Sales";
             this.sales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
             // purchase
             // 
@@ -510,6 +512,7 @@
             this.purchase.TabIndex = 9;
             this.purchase.Text = "Purchase";
             this.purchase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
             // reports
             // 
@@ -525,6 +528,7 @@
             this.reports.TabIndex = 11;
             this.reports.Text = "Report";
             this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reports.Click += new System.EventHandler(this.reports_Click);
             // 
             // employee
             // 
@@ -540,6 +544,7 @@
             this.employee.TabIndex = 4;
             this.employee.Text = "Employees";
             this.employee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employee.Click += new System.EventHandler(this.employee_Click);
             // 
             // product
             // 
@@ -555,6 +560,7 @@
             this.product.TabIndex = 3;
             this.product.Text = "Products";
             this.product.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.product.Click += new System.EventHandler(this.product_Click);
             // 
             // stock
             // 
@@ -570,6 +576,7 @@
             this.stock.TabIndex = 7;
             this.stock.Text = "Stock";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
             // orders
             // 
@@ -585,6 +592,7 @@
             this.orders.TabIndex = 6;
             this.orders.Text = "Suppliers";
             this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orders.Click += new System.EventHandler(this.orders_Click);
             // 
             // suppliers
             // 
@@ -601,6 +609,7 @@
             this.suppliers.TabIndex = 5;
             this.suppliers.Text = "Warehouses";
             this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.suppliers.Click += new System.EventHandler(this.suppliers_Click);
             // 
             // StocksMain
             // 

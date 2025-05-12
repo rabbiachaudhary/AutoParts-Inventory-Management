@@ -623,7 +623,15 @@ namespace FinalProjectG27
 
         private void product_Click(object sender, EventArgs e)
         {
-
+            ProductMain a= new ProductMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                purchase.Size = this.Size;
+                purchase.Location = this.Location;
+            }
+            purchase.Show();
+            this.Hide();
         }
 
         private void tableLayoutPanel3_Paint_1(object sender, PaintEventArgs e)

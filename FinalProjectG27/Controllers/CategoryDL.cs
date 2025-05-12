@@ -97,14 +97,20 @@ namespace FinalProjectG27.Controllers
         public static void DeleteCategory(int id)
 
         {
-            string query = "Delete from product_categories where category_id=@id";
-            var parameter = new Dictionary<string, object>
+
+            try
+            {
+                string query = "Delete from product_categories where category_id=@id";
+                var parameter = new Dictionary<string, object>
             {
                 { "@id", id },
             };
-            databasehelper.ExecuteDML(query,parameter);
-
-
+                databasehelper.ExecuteDML(query, parameter);
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("error: " + sqlEx.Message);
+            }
         }
 
         public static DataTable SearchCategoryByName(string categoryName)

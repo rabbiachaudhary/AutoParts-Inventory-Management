@@ -62,7 +62,7 @@ namespace FinalProjectG27.Controllers
 
         public static DataTable GetTransfer()
         {
-            string query = "select transfer_id,warehouse_name,product_name, quantity,note from stock_transfer st join warehouses w on w.warehouse_id=st.warehouse_id join products on p.product_id=st.product_id";
+            string query = "select transfer_id,warehouse_name,product_name, quantity,note from stock_transfer st join warehouses w on w.warehouse_id=st.warehouse_id join products p on p.product_id=st.product_id";
             return databasehelper.GetDataTable(query);
         }
 

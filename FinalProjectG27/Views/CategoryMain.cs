@@ -88,7 +88,7 @@ namespace FinalProjectG27.Views
                     if (confirm == DialogResult.Yes)
                     {
                         int id = Convert.ToInt32(dgvCategory.SelectedRows[0].Cells["category_id"].Value);
-                        ProductsDL.DeleteProduct(id);
+                            CategoryDL.DeleteCategory(id);
                         dgvCategory.Rows.Remove(dgvCategory.CurrentRow);
                         MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

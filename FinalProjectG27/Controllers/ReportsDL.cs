@@ -35,7 +35,7 @@ namespace FinalProjectG27.Controllers
             }
             else if (reporttype == "Completed Orders")
             {
-                query = "select * from complete_orders";
+                query = "select * from completed_orders";
 
             }
             else if (reporttype == "Customers Purchase History")
@@ -50,7 +50,7 @@ namespace FinalProjectG27.Controllers
             }
             else if (reporttype == "Expired Batches")
             {
-                query = "select * from expired_batches";
+                query = "select * from expiredbatchs";
 
             }
             else if (reporttype == "Product Price History")

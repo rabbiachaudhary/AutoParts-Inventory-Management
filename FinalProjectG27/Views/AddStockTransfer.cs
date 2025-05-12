@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProjectG27.Controllers;
+using FinalProjectG27.Database;
 using FinalProjectG27.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProjectG27.Views
 {
@@ -22,6 +24,8 @@ namespace FinalProjectG27.Views
         public AddStockTransfer(StockTransferMain main, bool isAdd = true)
         {
             InitializeComponent();
+            loadinwarehouse();
+            loadinproducts();
             this.main = main;
             this.isAdd = isAdd;
             add.Text = "Add Transfer";
@@ -32,6 +36,8 @@ namespace FinalProjectG27.Views
         public AddStockTransfer(StockTransferMain main, int id, string warehouse, string product, int qu, string note, bool isAdd = false)
         {
             InitializeComponent();
+            loadinwarehouse();
+            loadinproducts();
             this.main = main;
             add.Text = "Edit Transfer";
             addbtn.Visible = false;
@@ -119,6 +125,39 @@ namespace FinalProjectG27.Views
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        private void loadinwarehouse()
+        {
+            string query = "select warehouse_name from warehouses"; 
+            try
+            {
+                comboBox2.Items.Clear(); // Optional: Clear existing items
+                List<string> items = databasehelper.LoadComboBoxItems(query, "warehouse_name");
+                comboBox2.Items.AddRange(items.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading combo box: " + ex.Message);
+            }
+        }
+        private void loadinproducts()
+        {
+            string query = "select product_name from products";
+            try
+            {
+                comboBox1.Items.Clear(); // Optional: Clear existing items
+                List<string> items = databasehelper.LoadComboBoxItems(query, "product_name");
+                comboBox1.Items.AddRange(items.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading combo box: " + ex.Message);
+            }
         }
     }
 }
