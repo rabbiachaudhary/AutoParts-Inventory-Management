@@ -8,10 +8,9 @@ using System.Data;
 
 namespace FinalProjectG27.Database
 {
-
-    public class databasehelper
+    internal class databasehelper
     {
-        public static string constring = "Server=localhost;Uid=root;Pwd=atiqa@123atiqa@123;Database=final";
+        public static string constring = "Server=localhost;Uid=root;Pwd=662373+azra-azra;Database=final";
 
         // ✅ Execute INSERT, UPDATE, DELETE using parameters
         public static void ExecuteDML(string query, Dictionary<string, object> parameters = null)
@@ -32,7 +31,6 @@ namespace FinalProjectG27.Database
                 }
             }
         }
-
 
         // ✅ Get DataTable with parameters (for SELECT queries)
         public static DataTable GetDataTable(string query, Dictionary<string, object> parameters = null)
@@ -115,8 +113,21 @@ namespace FinalProjectG27.Database
             }
             return items;
         }
+        public static object GetSingleValue(string query, Dictionary<string, object> parameters)
+        {
+            using (MySqlConnection conn = new MySqlConnection(constring))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                    }
+
+                    conn.Open();
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
     }
 }
-
-
-

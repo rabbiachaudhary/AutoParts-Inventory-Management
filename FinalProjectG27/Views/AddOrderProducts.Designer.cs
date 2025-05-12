@@ -73,11 +73,8 @@
             this.textBox1.Location = new System.Drawing.Point(484, 106);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-<<<<<<< Updated upstream
             this.textBox1.Size = new System.Drawing.Size(230, 34);
-=======
             this.textBox1.Size = new System.Drawing.Size(230, 40);
->>>>>>> Stashed changes
             this.textBox1.TabIndex = 6;
             // 
             // comboBox2
