@@ -54,8 +54,8 @@ namespace FinalProjectG27.Views
                         this.Hide();
                         break;
 
-                    case "Staff":
-                        MainDashBoard staffForm = new MainDashBoard();
+                    case "Employee":
+                        EmployeeDashboard staffForm = new EmployeeDashboard();
                         staffForm.WindowState = this.WindowState;
                         if (this.WindowState != FormWindowState.Maximized)
                         {
@@ -65,6 +65,17 @@ namespace FinalProjectG27.Views
                         staffForm.Show();
                         this.Hide();
                         break;
+                    case "Warehouse Manager":
+                        MainDashBoard staffFormm = new MainDashBoard();
+                        staffFormm.WindowState = this.WindowState;
+                        if (this.WindowState != FormWindowState.Maximized)
+                        {
+                            staffFormm.Size = this.Size;
+                            staffFormm.Location = this.Location;
+                        }
+                        staffFormm.Show();
+                        this.Hide();
+                        break; 
 
                     default:
                         MessageBox.Show("Role not recognized.");

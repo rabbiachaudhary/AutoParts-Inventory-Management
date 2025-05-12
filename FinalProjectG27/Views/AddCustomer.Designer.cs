@@ -173,7 +173,7 @@
             this.editbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editbtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editbtn.Location = new System.Drawing.Point(264, 321);
+            this.editbtn.Location = new System.Drawing.Point(264, 352);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(141, 60);
             this.editbtn.TabIndex = 19;

@@ -50,7 +50,7 @@ namespace FinalProjectG27.Views
                 DataTable dt = CategoryDL.GetAllCategories();
 
                 comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "name"; // What user sees
+                comboBox1.DisplayMember = "name";                    // What user sees
                 comboBox1.ValueMember = "category_id";              // ID behind the scenes
 
                 if (comboBox1.Items.Count > 0)
@@ -89,15 +89,38 @@ namespace FinalProjectG27.Views
 
             string productName = product.Text;
             string description = des.Text;
+            decimal purP, saleP, Weight;
 
-            decimal Weight = decimal.Parse(weight.Text);
+            // First validate Purchase Price
+            if (!decimal.TryParse(pp.Text, out purP))
+            {
+                MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
+                return;
+            }
+
+            // Then validate Sale Price
+            if (!decimal.TryParse(sp.Text, out saleP))
+            {
+                MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
+                return;
+            }
+
+            // Now validate Weight
+            if (!decimal.TryParse(weight.Text, out Weight))
+            {
+                MessageBox.Show("Please enter a valid Weight (decimal number only).");
+                return;
+            }
+
+             Weight = decimal.Parse(weight.Text);
             string Size = size.Text;
             string Warranty = warranty.Text;
 
-            decimal purP = decimal.Parse(pp.Text);
-            decimal saleP = decimal.Parse(sp.Text);
+             purP = decimal.Parse(pp.Text);
+             saleP = decimal.Parse(sp.Text);
 
             string Category = comboBox1.Text;
+
             // Validation Checks
             if (string.IsNullOrWhiteSpace(productName))
             {
@@ -161,17 +184,52 @@ namespace FinalProjectG27.Views
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
+
+
             string productName = product.Text;
             string description = des.Text;
+            decimal purP, saleP, Weight;
 
-            decimal Weight = decimal.Parse(weight.Text);
+            // First validate Purchase Price
+            if (!decimal.TryParse(pp.Text, out purP))
+            {
+                MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
+                return;
+            }
+
+            // Then validate Sale Price
+            if (!decimal.TryParse(sp.Text, out saleP))
+            {
+                MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
+                return;
+            }
+
+            // Now validate Weight
+            if (!decimal.TryParse(weight.Text, out Weight))
+            {
+                MessageBox.Show("Please enter a valid Weight (decimal number only).");
+                return;
+            }
+            Weight = decimal.Parse(weight.Text);
             string Size = size.Text;
             string Warranty = warranty.Text;
 
-            decimal purP = decimal.Parse(pp.Text);
-            decimal saleP = decimal.Parse(sp.Text);
+             purP = decimal.Parse(pp.Text);
+             saleP = decimal.Parse(sp.Text);
 
             string Category = comboBox1.Text;
+
+            if (!decimal.TryParse(pp.Text, out purP))
+            {
+                MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
+                return;
+            }
+
+            if (!decimal.TryParse(sp.Text, out saleP))
+            {
+                MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
+                return;
+            }
 
             // Validation Checks
             if (string.IsNullOrWhiteSpace(productName))

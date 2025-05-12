@@ -10,7 +10,7 @@ namespace FinalProjectG27.Database
 {
     internal class databasehelper
     {
-        public static string constring = "Server=localhost;Uid=root;Pwd=662373+azra-azra;Database=final";
+        public static string constring = "Server=localhost;Uid=root;Pwd=javairiaqasim123456789$$;Database=dbfinal";
 
         // ✅ Execute INSERT, UPDATE, DELETE using parameters
         public static void ExecuteDML(string query, Dictionary<string, object> parameters = null)
@@ -113,6 +113,7 @@ namespace FinalProjectG27.Database
             }
             return items;
         }
+        //for string 
         public static object GetSingleValue(string query, Dictionary<string, object> parameters)
         {
             using (MySqlConnection conn = new MySqlConnection(constring))

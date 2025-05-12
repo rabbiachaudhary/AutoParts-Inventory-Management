@@ -93,7 +93,7 @@ namespace FinalProjectG27.Views
                 return;
             }
 
-            CustomerBL c = new CustomerBL(Fname, Lname, Email, Contact, Address);
+            CustomerBL c = new CustomerBL(Fname, Lname, Contact, Address, Email);
             CustomerDL.UpdateCustomer(c,customerId);
             main.LoadData();
             MessageBox.Show("Updated successfully");
@@ -148,7 +148,7 @@ namespace FinalProjectG27.Views
                 return;
             }
 
-            CustomerBL c=new CustomerBL(Fname,Lname, Email, Contact, Address);
+            CustomerBL c=new CustomerBL(Fname,Lname, Contact, Address, Email);
             bool isAdd =CustomerDL.AddCustomer(c);
             if (isAdd)
             {
