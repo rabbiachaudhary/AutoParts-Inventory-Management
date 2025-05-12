@@ -51,11 +51,26 @@ namespace FinalProjectG27.Views
 
         private void editbtn_Click(object sender, EventArgs e)
         {
+            decimal Tax, Markup;
+
+            // First validate Purchase Price
+            if (!decimal.TryParse(tax.Text, out Tax))
+            {
+                MessageBox.Show("Please enter a valid Tax Price (decimal number only).");
+                return;
+            }
+
+            // Then validate Sale Price
+            if (!decimal.TryParse(markup.Text, out Markup))
+            {
+                MessageBox.Show("Please enter a valid Markup Price (decimal number only).");
+                return;
+            }
 
             string Name = name.Text;
             string Des = des.Text;
-            decimal Tax = decimal.Parse(tax.Text);
-            decimal Markup = decimal.Parse(markup.Text);
+             Tax = decimal.Parse(tax.Text);
+             Markup = decimal.Parse(markup.Text);
 
             // Validate Name
             if (string.IsNullOrWhiteSpace(Name))
@@ -94,10 +109,26 @@ namespace FinalProjectG27.Views
 
         private void addbtn_Click(object sender, EventArgs e)
         {
+
+            decimal Tax, Markup;
+
+            // First validate Purchase Price
+            if (!decimal.TryParse(tax.Text, out Tax))
+            {
+                MessageBox.Show("Please enter a valid Tax Price (decimal number only).");
+                return;
+            }
+
+            // Then validate Sale Price
+            if (!decimal.TryParse(markup.Text, out Markup))
+            {
+                MessageBox.Show("Please enter a valid Markup Price (decimal number only).");
+                return;
+            }
             string Name = name.Text;
             string Des=des.Text;
-            decimal Tax=decimal.Parse(tax.Text);
-            decimal Markup = decimal.Parse(markup.Text);
+            Tax=decimal.Parse(tax.Text);
+            Markup = decimal.Parse(markup.Text);
 
             // Validate Name
             if (string.IsNullOrWhiteSpace(Name))

@@ -36,7 +36,7 @@ namespace FinalProjectG27.Views
             //dimForm.Show();
 
 
-            if (dgvCategory.SelectedRows.Count > 0)
+            if (dgvCategory.SelectedRows.Count == 1)
             {
                 int id = Convert.ToInt32(dgvCategory.SelectedRows[0].Cells["category_id"].Value);
 

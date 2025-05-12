@@ -114,6 +114,7 @@ namespace FinalProjectG27.Database
             }
             return items;
         }
+        //for string 
         public static object GetSingleValue(string query, Dictionary<string, object> parameters)
         {
             using (MySqlConnection conn = new MySqlConnection(constring))

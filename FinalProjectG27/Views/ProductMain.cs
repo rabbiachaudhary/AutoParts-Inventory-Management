@@ -49,7 +49,7 @@ namespace FinalProjectG27.Views
             //dimForm dimForm = new dimForm();
             //dimForm.Show();
 
-            if (dgvProducts.SelectedRows.Count > 0)
+            if (dgvProducts.SelectedRows.Count == 1)
             {
                 int id = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Product_ID"].Value);
 

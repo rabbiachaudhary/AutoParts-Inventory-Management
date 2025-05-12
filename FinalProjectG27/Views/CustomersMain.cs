@@ -35,7 +35,7 @@ namespace FinalProjectG27.Views
             //dimForm.Show();
             if (dgvcustomer.CurrentRow != null)
             {
-                if (dgvcustomer.SelectedRows.Count > 0)
+                if (dgvcustomer.SelectedRows.Count == 1)
                 {
                     int id = Convert.ToInt32(dgvcustomer.SelectedRows[0].Cells["customer_id"].Value);
 
@@ -46,7 +46,7 @@ namespace FinalProjectG27.Views
                     string a = dgvcustomer.CurrentRow.Cells["A"].Value.ToString();
 
 
-                    AddCustomer addcustomer = new AddCustomer(this, id, fn, ln, c, em, a, false);
+                    AddCustomer addcustomer = new AddCustomer(this, id, fn, ln, c,em, a,false);
                     addcustomer.TopMost = true;
                     addcustomer.ShowDialog();
                 }
