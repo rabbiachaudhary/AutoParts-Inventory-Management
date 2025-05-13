@@ -179,5 +179,19 @@ namespace FinalProjectG27.Views
             a.Show();
             this.Hide();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            Login a = new Login();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
     }
 }
