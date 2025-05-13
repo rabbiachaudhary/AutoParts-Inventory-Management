@@ -242,5 +242,21 @@ namespace FinalProjectG27.Views
             a.Show();
             this.Hide();
         }
+
+        private void tableLayoutPanel19_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            string search = textBox1.Text;
+            DataTable searchData = StockTransferDL.GetSearchData(search);
+            if (searchData != null)
+            {
+                dataGridView1.DataSource = searchData;
+            }
+        }
     }
 }

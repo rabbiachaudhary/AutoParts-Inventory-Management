@@ -78,6 +78,11 @@ namespace FinalProjectG27.Controllers
                 query = "select * from view_stock_transfer";
 
             }
+            else if (reporttype == "Purchase Invoice")
+            {
+                query = "select * from purchases_invoice";
+
+            }
             
             dt = databasehelper.GetDataTable(query);
             return dt;

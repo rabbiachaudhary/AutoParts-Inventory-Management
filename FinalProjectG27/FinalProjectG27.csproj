@@ -124,7 +124,7 @@
     <Compile Include="Models\SaleOrderProductsBL.cs" />
     <Compile Include="Models\staffBL.cs" />
     <Compile Include="Controllers\staffDL.cs" />
-    <Compile Include="Models\stocks.cs" />
+    <Compile Include="Controllers\stocks.cs" />
     <Compile Include="Models\StockTransferBL.cs" />
     <Compile Include="Models\SupplierBL.cs" />
     <Compile Include="Views\AddEmployeee.cs">

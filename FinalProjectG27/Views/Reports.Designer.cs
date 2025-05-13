@@ -373,7 +373,8 @@
             "Supplier Performance",
             "Top Selling Products",
             "Unavailable Shop Stock",
-            "View Stock Transfer"});
+            "View Stock Transfer",
+            "Purchase Invoice"});
             this.comboBox1.Location = new System.Drawing.Point(758, 118);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(212, 24);

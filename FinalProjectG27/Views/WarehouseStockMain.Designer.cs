@@ -423,6 +423,7 @@
             this.textBox1.Size = new System.Drawing.Size(935, 67);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Search here";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 

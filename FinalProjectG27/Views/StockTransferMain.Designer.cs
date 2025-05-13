@@ -90,6 +90,7 @@
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel19.Size = new System.Drawing.Size(1494, 100);
             this.tableLayoutPanel19.TabIndex = 1;
+            this.tableLayoutPanel19.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel19_Paint);
             // 
             // pictureBox11
             // 
@@ -124,6 +125,7 @@
             this.textBox1.Size = new System.Drawing.Size(935, 67);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Search by warehouse name";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 

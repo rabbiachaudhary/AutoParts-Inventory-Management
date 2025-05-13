@@ -166,5 +166,16 @@ namespace FinalProjectG27.Views
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            string search = textBox1.Text;
+            DataTable searchData = stocks.WSGetSearchData(search);
+            if (searchData != null)
+            {
+                dataGridView1.DataSource = searchData;
+            }
+        }
     }
 }
