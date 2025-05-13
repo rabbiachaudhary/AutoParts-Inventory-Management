@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopStockMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -108,7 +108,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(935, 67);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Search here";
+            this.textBox1.Text = "Search by product";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 
@@ -319,6 +320,7 @@
             this.customers.TabIndex = 10;
             this.customers.Text = "Customers";
             this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customers.Click += new System.EventHandler(this.customers_Click);
             // 
             // sales
             // 
@@ -334,6 +336,7 @@
             this.sales.TabIndex = 8;
             this.sales.Text = "Sales";
             this.sales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
             // purchase
             // 
@@ -349,6 +352,7 @@
             this.purchase.TabIndex = 9;
             this.purchase.Text = "Purchase";
             this.purchase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
             // reports
             // 
@@ -364,6 +368,7 @@
             this.reports.TabIndex = 11;
             this.reports.Text = "Report";
             this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reports.Click += new System.EventHandler(this.reports_Click);
             // 
             // employee
             // 
@@ -379,6 +384,7 @@
             this.employee.TabIndex = 4;
             this.employee.Text = "Employees";
             this.employee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employee.Click += new System.EventHandler(this.employee_Click);
             // 
             // product
             // 
@@ -394,6 +400,7 @@
             this.product.TabIndex = 3;
             this.product.Text = "Products";
             this.product.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.product.Click += new System.EventHandler(this.product_Click);
             // 
             // stock
             // 
@@ -409,6 +416,7 @@
             this.stock.TabIndex = 7;
             this.stock.Text = "Stock";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
             // orders
             // 
@@ -424,6 +432,7 @@
             this.orders.TabIndex = 6;
             this.orders.Text = "Suppliers";
             this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orders.Click += new System.EventHandler(this.orders_Click);
             // 
             // suppliers
             // 
@@ -440,6 +449,7 @@
             this.suppliers.TabIndex = 5;
             this.suppliers.Text = "WareHouses";
             this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.suppliers.Click += new System.EventHandler(this.suppliers_Click);
             // 
             // dataGridView1
             // 
@@ -448,14 +458,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(5, 205);

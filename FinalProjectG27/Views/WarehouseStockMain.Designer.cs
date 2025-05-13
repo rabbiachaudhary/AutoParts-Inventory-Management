@@ -164,6 +164,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -251,6 +252,7 @@
             this.customers.TabIndex = 10;
             this.customers.Text = "Customers";
             this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customers.Click += new System.EventHandler(this.customers_Click);
             // 
             // sales
             // 
@@ -266,6 +268,7 @@
             this.sales.TabIndex = 8;
             this.sales.Text = "Sales";
             this.sales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
             // purchase
             // 
@@ -281,6 +284,7 @@
             this.purchase.TabIndex = 9;
             this.purchase.Text = "Purchase";
             this.purchase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
             // reports
             // 
@@ -296,6 +300,7 @@
             this.reports.TabIndex = 11;
             this.reports.Text = "Report";
             this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reports.Click += new System.EventHandler(this.reports_Click);
             // 
             // employee
             // 
@@ -311,6 +316,7 @@
             this.employee.TabIndex = 4;
             this.employee.Text = "Employees";
             this.employee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employee.Click += new System.EventHandler(this.employee_Click);
             // 
             // product
             // 
@@ -326,6 +332,7 @@
             this.product.TabIndex = 3;
             this.product.Text = "Products";
             this.product.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.product.Click += new System.EventHandler(this.product_Click);
             // 
             // stock
             // 
@@ -341,6 +348,7 @@
             this.stock.TabIndex = 7;
             this.stock.Text = "Stock";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
             // orders
             // 
@@ -356,6 +364,7 @@
             this.orders.TabIndex = 6;
             this.orders.Text = "Suppliers";
             this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orders.Click += new System.EventHandler(this.orders_Click);
             // 
             // suppliers
             // 
@@ -372,6 +381,7 @@
             this.suppliers.TabIndex = 5;
             this.suppliers.Text = "WareHouses";
             this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.suppliers.Click += new System.EventHandler(this.suppliers_Click);
             // 
             // tableLayoutPanel19
             // 
@@ -413,6 +423,7 @@
             this.textBox1.Size = new System.Drawing.Size(935, 67);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Search here";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 

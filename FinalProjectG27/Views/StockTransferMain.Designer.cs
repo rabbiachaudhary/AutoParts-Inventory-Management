@@ -28,21 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockTransferMain));
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.addpic = new System.Windows.Forms.PictureBox();
-            this.editpic = new System.Windows.Forms.PictureBox();
-            this.delete = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,8 +59,6 @@
             this.tableLayoutPanel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addpic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editpic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delete)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -91,8 +83,6 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel19.Controls.Add(this.pictureBox11, 1, 0);
             this.tableLayoutPanel19.Controls.Add(this.addpic, 3, 0);
-            this.tableLayoutPanel19.Controls.Add(this.editpic, 4, 0);
-            this.tableLayoutPanel19.Controls.Add(this.delete, 5, 0);
             this.tableLayoutPanel19.Controls.Add(this.textBox1, 2, 0);
             this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 97);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -100,6 +90,7 @@
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel19.Size = new System.Drawing.Size(1494, 100);
             this.tableLayoutPanel19.TabIndex = 1;
+            this.tableLayoutPanel19.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel19_Paint);
             // 
             // pictureBox11
             // 
@@ -124,30 +115,6 @@
             this.addpic.TabStop = false;
             this.addpic.Click += new System.EventHandler(this.addpic_Click);
             // 
-            // editpic
-            // 
-            this.editpic.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.editpic.Image = global::FinalProjectG27.Properties.Resources.refresh__1_;
-            this.editpic.Location = new System.Drawing.Point(1331, 20);
-            this.editpic.Name = "editpic";
-            this.editpic.Size = new System.Drawing.Size(72, 60);
-            this.editpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.editpic.TabIndex = 3;
-            this.editpic.TabStop = false;
-            this.editpic.Click += new System.EventHandler(this.editpic_Click);
-            // 
-            // delete
-            // 
-            this.delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.delete.Image = global::FinalProjectG27.Properties.Resources.trash;
-            this.delete.Location = new System.Drawing.Point(1413, 20);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(72, 60);
-            this.delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.delete.TabIndex = 4;
-            this.delete.TabStop = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -158,6 +125,7 @@
             this.textBox1.Size = new System.Drawing.Size(935, 67);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Search by warehouse name";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 
@@ -193,20 +161,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductName,
-            this.LastName,
-            this.Contact,
-            this.Email});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(5, 205);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
@@ -216,38 +179,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1490, 495);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "Name";
-            this.ProductName.HeaderText = "Warehouse";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "Product";
-            this.LastName.MinimumWidth = 6;
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            // 
-            // Contact
-            // 
-            this.Contact.DataPropertyName = "Contact";
-            this.Contact.HeaderText = "Quantity";
-            this.Contact.MinimumWidth = 6;
-            this.Contact.Name = "Contact";
-            this.Contact.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Note";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -431,6 +362,7 @@
             this.customers.TabIndex = 10;
             this.customers.Text = "Customers";
             this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customers.Click += new System.EventHandler(this.customers_Click);
             // 
             // sales
             // 
@@ -446,6 +378,7 @@
             this.sales.TabIndex = 8;
             this.sales.Text = "Sales";
             this.sales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sales.Click += new System.EventHandler(this.sales_Click);
             // 
             // purchase
             // 
@@ -461,6 +394,7 @@
             this.purchase.TabIndex = 9;
             this.purchase.Text = "Purchase";
             this.purchase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchase.Click += new System.EventHandler(this.purchase_Click);
             // 
             // reports
             // 
@@ -476,6 +410,7 @@
             this.reports.TabIndex = 11;
             this.reports.Text = "Report";
             this.reports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reports.Click += new System.EventHandler(this.reports_Click);
             // 
             // employee
             // 
@@ -491,6 +426,7 @@
             this.employee.TabIndex = 4;
             this.employee.Text = "Employees";
             this.employee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employee.Click += new System.EventHandler(this.employee_Click);
             // 
             // product
             // 
@@ -506,6 +442,7 @@
             this.product.TabIndex = 3;
             this.product.Text = "Products";
             this.product.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.product.Click += new System.EventHandler(this.product_Click);
             // 
             // stock
             // 
@@ -521,6 +458,7 @@
             this.stock.TabIndex = 7;
             this.stock.Text = "Stock";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
             // orders
             // 
@@ -536,6 +474,7 @@
             this.orders.TabIndex = 6;
             this.orders.Text = "Suppliers";
             this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orders.Click += new System.EventHandler(this.orders_Click);
             // 
             // suppliers
             // 
@@ -552,6 +491,7 @@
             this.suppliers.TabIndex = 5;
             this.suppliers.Text = "WareHouses";
             this.suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.suppliers.Click += new System.EventHandler(this.suppliers_Click);
             // 
             // StockTransferMain
             // 
@@ -566,8 +506,6 @@
             this.tableLayoutPanel19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addpic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editpic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delete)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -587,19 +525,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox editpic;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox addpic;
-        private System.Windows.Forms.PictureBox delete;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

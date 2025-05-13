@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using FinalProjectG27.Database;
 
 namespace FinalProjectG27.Controllers
@@ -45,7 +46,9 @@ namespace FinalProjectG27.Controllers
         }
         public static void UpdateProduct(ProductsBL s, int id)
         {
-            string query = @"update products 
+            try
+            {
+                string query = @"update products 
                              set product_name = @pn, 
                                  weight = @w, 
                                  description = @d, 
@@ -55,7 +58,7 @@ namespace FinalProjectG27.Controllers
                                  purchase_price=@pp,
                                  sale_price=@sp
                                  where product_id = @id";
-            var parameter = new Dictionary<string, object>
+                var parameter = new Dictionary<string, object>
             {
                 {"@pn", s.ProductName },
                 {"@w", s.Weight },
@@ -67,7 +70,13 @@ namespace FinalProjectG27.Controllers
                 {"@sp", s.SalePrice },
                 {"@id", id }
             };
-            databasehelper.ExecuteDML(query, parameter);
+                databasehelper.ExecuteDML(query, parameter);
+                MessageBox.Show("updated");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public static void DeleteProduct(int id)
         {

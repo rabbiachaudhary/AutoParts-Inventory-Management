@@ -86,18 +86,84 @@ namespace FinalProjectG27.Views
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-
-            string productName = product.Text;
-            string description = des.Text;
-            string Size = size.Text;
-            string Warranty = warranty.Text;
-            string category = comboBox1.Text;
-
-            // === Validation ===
-            if (string.IsNullOrWhiteSpace(productName))
+            try
             {
-                MessageBox.Show("Product name is required.");
-                return;
+                string productName = product.Text?.Trim();
+                string description = des.Text?.Trim();
+                string Size = size.Text?.Trim();
+                string Warranty = warranty.Text?.Trim();
+                string category = comboBox1.Text?.Trim();
+
+                if (string.IsNullOrWhiteSpace(productName))
+                {
+                    MessageBox.Show("Product name is required.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(description))
+                {
+                    MessageBox.Show("Description is required.");
+                    return;
+                }
+
+                if (!decimal.TryParse(weight.Text, out decimal weightValue) || weightValue <= 0)
+                {
+                    MessageBox.Show("Please enter a valid numeric weight.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(Size))
+                {
+                    MessageBox.Show("Size is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(Warranty))
+                {
+                    MessageBox.Show("Warranty is required.");
+                    return;
+                }
+
+                if (!decimal.TryParse(pp.Text, out decimal purP) || purP < 0)
+                {
+                    MessageBox.Show("Please enter a valid numeric purchase price.");
+                    return;
+                }
+
+                if (!decimal.TryParse(sp.Text, out decimal saleP) || saleP < 0)
+                {
+                    MessageBox.Show("Please enter a valid numeric sale price.");
+                    return;
+                }
+
+                if (saleP <= purP)
+                {
+                    MessageBox.Show("Sale price must be greater than purchase price.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(category))
+                {
+                    MessageBox.Show("Please select a category.");
+                    return;
+                }
+                int categoryId = ProductsDL.GetCategoryIdByName(category);
+                
+
+                if (productId <= 0)
+                {
+                    MessageBox.Show("Invalid Product ID.");
+                    return;
+                }
+
+                ProductsBL productObj = new ProductsBL(productName, description, weightValue, Size, Warranty, purP, saleP, categoryId);
+
+                ProductsDL.UpdateProduct(productObj, productId);
+                
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message);
             }
 
             if (string.IsNullOrWhiteSpace(description))
@@ -176,8 +242,6 @@ namespace FinalProjectG27.Views
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-
-
             string productName = product.Text;
             string description = des.Text;
             string Size = size.Text;
@@ -197,7 +261,6 @@ namespace FinalProjectG27.Views
             //    return;
             //}
 
-            // Validation Checks
             if (string.IsNullOrWhiteSpace(productName))
             {
                 MessageBox.Show("Product name is required.");
@@ -210,7 +273,7 @@ namespace FinalProjectG27.Views
                 return;
             }
 
-            if (!decimal.TryParse(weight.Text, out decimal Weight) || Weight <= 0)
+            if (!decimal.TryParse(weight.Text, out Weight) || Weight <= 0)
             {
                 MessageBox.Show("Please enter a valid numeric weight.");
                 return;
@@ -228,29 +291,16 @@ namespace FinalProjectG27.Views
                 return;
             }
 
-            if (!decimal.TryParse(pp.Text, out decimal purP) || purP < 0)
-            {
-                MessageBox.Show("Please enter a valid numeric purchase price.");
-                return;
-            }
-
-            if (!decimal.TryParse(sp.Text, out decimal saleP) || saleP < 0)
-            {
-                MessageBox.Show("Please enter a valid numeric sale price.");
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(Category))
             {
                 MessageBox.Show("Please select a category.");
                 return;
             }
 
-            // Get category ID
             int categoryId = ProductsDL.GetCategoryIdByName(Category);
 
-            // Create product object and add to DB
             ProductsBL Product = new ProductsBL(productName, description, Weight, Size, Warranty, purP, saleP, categoryId);
+
             bool isadded = ProductsDL.AddProduct(Product);
 
             if (isadded)

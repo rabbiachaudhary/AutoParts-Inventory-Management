@@ -35,5 +35,147 @@ namespace FinalProjectG27.Views
         {
 
         }
+
+        private void product_Click(object sender, EventArgs e)
+        {
+
+            ProductMain a = new ProductMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void employee_Click(object sender, EventArgs e)
+        {
+
+            EmployeesMain a = new EmployeesMain();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void orders_Click(object sender, EventArgs e)
+        {
+            SuppliersMain a = new SuppliersMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void suppliers_Click(object sender, EventArgs e)
+        {
+            WarehousesMain a = new WarehousesMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void stock_Click(object sender, EventArgs e)
+        {
+            StocksMain a = new StocksMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void sales_Click(object sender, EventArgs e)
+        {
+            SaleOrdersMain a = new SaleOrdersMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void purchase_Click(object sender, EventArgs e)
+        {
+            PurchaseOrderMain a = new PurchaseOrderMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void customers_Click(object sender, EventArgs e)
+        {
+            CustomersMain a= new CustomersMain();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void reports_Click(object sender, EventArgs e)
+        {
+            Reports a= new Reports();
+
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            string search = textBox1.Text;
+            DataTable searchData = stocks.WSGetSearchData(search);
+            if (searchData != null)
+            {
+                dataGridView1.DataSource = searchData;
+            }
+        }
     }
 }

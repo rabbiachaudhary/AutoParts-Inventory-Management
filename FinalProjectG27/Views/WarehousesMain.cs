@@ -248,5 +248,10 @@ namespace FinalProjectG27.Views
                 dgvWarehouse.DataSource = searchData;
             }
         }
+
+        private void tableLayoutPanel19_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

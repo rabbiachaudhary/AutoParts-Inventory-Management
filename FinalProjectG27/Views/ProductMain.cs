@@ -67,6 +67,7 @@ namespace FinalProjectG27.Views
                 AddProduct addProduct = new AddProduct(id,this,name,d,cn,w,s,war,pp,sp,false);
                 addProduct.TopMost = true;
                 addProduct.ShowDialog();
+                LoadData();
             }
 
             else
