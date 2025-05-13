@@ -10,7 +10,7 @@ namespace FinalProjectG27.Database
 {
     internal class databasehelper
     {
-        public static string constring = "Server=localhost;Uid=root;Pwd=atiqa@123atiqa@123;Database=final";
+        public static string constring = "Server=localhost;Uid=root;Pwd=javairiaqasim123456789$$;Database=final";
 
         // ✅ Execute INSERT, UPDATE, DELETE using parameters
         public static void ExecuteDML(string query, Dictionary<string, object> parameters = null)

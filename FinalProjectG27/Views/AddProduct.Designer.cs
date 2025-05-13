@@ -226,7 +226,7 @@
             this.updatebtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updatebtn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updatebtn.Location = new System.Drawing.Point(263, 333);
+            this.updatebtn.Location = new System.Drawing.Point(263, 348);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(141, 64);
             this.updatebtn.TabIndex = 18;

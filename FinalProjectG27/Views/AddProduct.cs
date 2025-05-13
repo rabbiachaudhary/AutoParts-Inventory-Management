@@ -143,13 +143,13 @@ namespace FinalProjectG27.Views
                 return;
             }
 
-            // Ensure category is selected from comboBox items
-            bool categoryExists = comboBox1.Items.Cast<string>().Any(item => item.Equals(category, StringComparison.OrdinalIgnoreCase));
-            if (!categoryExists)
-            {
-                MessageBox.Show("Please select a valid category from the list.");
-                return;
-            }
+            //// Ensure category is selected from comboBox items
+            //bool categoryExists = comboBox1.Items.Cast<string>().Any(item => item.Equals(category, StringComparison.OrdinalIgnoreCase));
+            //if (!categoryExists)
+            //{
+            //    MessageBox.Show("Please select a valid category from the list.");
+            //    return;
+            //}
 
             if (string.IsNullOrWhiteSpace(category))
             {
@@ -183,18 +183,19 @@ namespace FinalProjectG27.Views
             string Size = size.Text;
             string Warranty = warranty.Text;
             string Category = comboBox1.Text;
+            //decimal purP, saleP;
 
-            if (!decimal.TryParse(pp.Text, out purP))
-            {
-                MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
-                return;
-            }
+            //if (!decimal.TryParse(pp.Text, out purP))
+            //{
+            //    MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
+            //    return;
+            //}
 
-            if (!decimal.TryParse(sp.Text, out saleP))
-            {
-                MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
-                return;
-            }
+            //if (!decimal.TryParse(sp.Text, out saleP))
+            //{
+            //    MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
+            //    return;
+            //}
 
             // Validation Checks
             if (string.IsNullOrWhiteSpace(productName))
