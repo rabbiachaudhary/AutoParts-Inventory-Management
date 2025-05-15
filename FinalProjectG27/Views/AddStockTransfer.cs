@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,7 +51,24 @@ namespace FinalProjectG27.Views
             textBox5.Text=note;
 
         }
+        private void loadinproducts()
+        {
+            string query = "select product_name from products";
+            List<string> items = databasehelper.LoadComboBoxItems(query, "product_name");
 
+            // Bind the items to the ComboBox
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(items.ToArray());
+        }
+        private void loadinwarehouse()
+        {
+            string query = "select warehouse_name from warehouses";
+            List<string> items = databasehelper.LoadComboBoxItems(query, "warehouse_name");
+
+            // Bind the items to the ComboBox
+            comboBox2.Items.Clear();
+            comboBox2.Items.AddRange(items.ToArray());
+        }
         public AddStockTransfer(bool isAdd = false)
         {
             InitializeComponent();
@@ -121,7 +139,7 @@ namespace FinalProjectG27.Views
                 MessageBox.Show("error" + ex.Message);
             }
         }
-
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e) { }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
