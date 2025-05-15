@@ -22,6 +22,15 @@ namespace FinalProjectG27.Views
         private void addpic_Click(object sender, EventArgs e)
         {
 
+            Login a = new Login();
+            a.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                a.Size = this.Size;
+                a.Location = this.Location;
+            }
+            a.Show();
+            this.Hide();
         }
 
         public DataTable LoadData()
