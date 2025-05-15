@@ -24,6 +24,12 @@ namespace FinalProjectG27
 
         }
 
-
+        public Views.CustomersMain CustomersMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

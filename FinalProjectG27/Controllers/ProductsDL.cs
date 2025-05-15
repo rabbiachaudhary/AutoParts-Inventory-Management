@@ -12,6 +12,14 @@ namespace FinalProjectG27.Controllers
 {
     internal class ProductsDL
     {
+        internal ProductsBL ProductsBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool AddProduct(ProductsBL s)
         {
             string query = @"insert into products (product_name,weight,description, size,warranty,category_id,purchase_price,sale_price)
@@ -44,7 +52,7 @@ namespace FinalProjectG27.Controllers
             string query = "select* from products";
             return databasehelper.GetDataTable(query);
         }
-        public static void UpdateProduct(ProductsBL s, int id)
+        public static bool UpdateProduct(ProductsBL s, int id)
         {
             try
             {
@@ -71,11 +79,12 @@ namespace FinalProjectG27.Controllers
                 {"@id", id }
             };
                 databasehelper.ExecuteDML(query, parameter);
-                MessageBox.Show("updated");
+                return true;
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
         public static void DeleteProduct(int id)

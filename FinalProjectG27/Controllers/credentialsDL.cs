@@ -11,6 +11,14 @@ namespace FinalProjectG27.Controllers
 {
     internal class credentialsDL
     {
+        internal Models.credentialsBL credentialsBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static int AuthenticateUser(string username, string password)
         {
             try

@@ -20,5 +20,12 @@ namespace FinalProjectG27
             this.postalcode = postal;
         }
 
+        public Views.WarehouseStockMain WarehouseStockMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

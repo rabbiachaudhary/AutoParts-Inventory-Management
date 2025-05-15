@@ -13,6 +13,14 @@ namespace FinalProjectG27.Controllers
 {
     public class SaleOrderDL
     {
+        public SaleOrderBL SaleOrderBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static DataTable Getorder()
         {
             string query = @"

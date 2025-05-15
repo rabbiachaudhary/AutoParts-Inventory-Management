@@ -13,6 +13,14 @@ namespace FinalProjectG27.Controllers
 {
     public class PurchaseOrderProductsDL
     {
+        public PurchaseOrderProductsBL PurchaseOrderProductsBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static DataTable Getorder()
         {
             string query = @"select po.purchase_order_id as purchase_order_id,po.podetail_id as podetail_id ,

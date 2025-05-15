@@ -13,6 +13,14 @@ namespace FinalProjectG27.Controllers
 {
     public class PurchaseOrderDL
     {
+        public PurchaseOrderBL PurchaseOrderBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static DataTable Getorder()
         {
             string query = @"

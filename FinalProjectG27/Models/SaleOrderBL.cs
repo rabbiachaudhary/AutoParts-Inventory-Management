@@ -29,6 +29,14 @@ namespace FinalProjectG27.Models
             Status = status;
 
         }
+
+        public Views.SaleOrdersMain SaleOrdersMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
 

@@ -13,6 +13,14 @@ namespace FinalProjectG27.Controllers
 {
     public class SupplierDL
     {
+        public SupplierBL SupplierBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static DataTable GetSupplier()
         {
             string query = "select * from suppliers";

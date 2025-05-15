@@ -15,6 +15,14 @@ namespace FinalProjectG27
 {
     internal class staffDL
     {
+        internal staffBL staffBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool AddStaff(staffBL s, credentialsBL c)
         {
             using (MySqlConnection con = new MySqlConnection(databasehelper.constring))

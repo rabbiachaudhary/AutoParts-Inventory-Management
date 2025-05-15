@@ -78,7 +78,7 @@ namespace FinalProjectG27.Views
         {
             try
             {
-                if (dgvCategory.CurrentRow != null)
+                if (dgvCategory.CurrentRow != null && (dgvCategory.SelectedRows.Count == 1))
                 {
                     DialogResult confirm = MessageBox.Show("Are you sure you want to delete this record?",
                                                            "Confirm Deletion",

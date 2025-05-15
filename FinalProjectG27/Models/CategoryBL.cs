@@ -21,5 +21,12 @@ namespace FinalProjectG27.Models
             Markup = markup;
         }
 
+        public Views.CategoryMain CategoryMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

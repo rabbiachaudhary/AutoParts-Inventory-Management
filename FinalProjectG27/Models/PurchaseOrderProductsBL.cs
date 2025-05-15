@@ -26,5 +26,13 @@ namespace FinalProjectG27.Models
             Quantity = quantity;
 
         }
+
+        public Views.PurchaseOrderMain PurchaseOrderMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

@@ -12,6 +12,14 @@ namespace FinalProjectG27.Controllers
 {
     internal class CustomerDL
     {
+        internal CustomerBL CustomerBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool AddCustomer(CustomerBL c)
         {
             string query = @"insert into customers (first_name,last_name,contact,email,address) values(@fname,@lname,@contact,@email,@address)";
