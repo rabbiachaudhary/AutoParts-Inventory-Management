@@ -149,5 +149,10 @@ namespace FinalProjectG27.Views
         {
 
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

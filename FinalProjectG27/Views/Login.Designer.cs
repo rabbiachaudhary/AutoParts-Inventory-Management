@@ -37,12 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnlog = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.pan.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,7 +80,7 @@
             this.pan.Controls.Add(this.panel1, 1, 0);
             this.pan.Controls.Add(this.panel2, 0, 0);
             this.pan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pan.Location = new System.Drawing.Point(136, 85);
+            this.pan.Location = new System.Drawing.Point(135, 85);
             this.pan.Name = "pan";
             this.pan.RowCount = 1;
             this.pan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -174,6 +174,15 @@
             this.btnlog.UseVisualStyleBackColor = true;
             this.btnlog.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(150, 183);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(356, 67);
+            this.txtUsername.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -233,15 +242,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Welcome Back !";
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(150, 183);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(356, 67);
-            this.txtUsername.TabIndex = 1;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,6 +251,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.Load += new System.EventHandler(this.Login_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pan.ResumeLayout(false);

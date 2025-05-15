@@ -20,7 +20,7 @@
       <Property Name="CategoryMain" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.CategoryMain">
+  <Class Name="FinalProjectG27.Views.CategoryMain" Collapsed="true">
     <Position X="2.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gEBgchAVAiQwARQEAQGIQQQWgOw7JISAwGAgByBABCA=</HashCode>
@@ -47,10 +47,10 @@
       <Property Name="Login" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.Login">
+  <Class Name="FinalProjectG27.Views.Login" Collapsed="true">
     <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABgAAAIiACAAABAAAACAAgACAIAAAAAAAFBAAQBAACA=</HashCode>
+      <HashCode>ABgAAAIiACAAABAAAACAAgACAIAAAAAAgFBAAQBAACA=</HashCode>
       <FileName>Views\Login.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -74,7 +74,7 @@
       <Property Name="CustomersMain" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.CustomersMain">
+  <Class Name="FinalProjectG27.Views.CustomersMain" Collapsed="true">
     <Position X="4.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAchAVAiAwSRAEAQGIQQQWgMw7JIAAwGAgpyBgBCA=</HashCode>
@@ -101,7 +101,7 @@
       <Property Name="ProductMain" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.ProductMain">
+  <Class Name="FinalProjectG27.Views.ProductMain" Collapsed="true">
     <Position X="7" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gEAAchAVAiAwBRBEAQGIQQSSgOw7JYABwHAgByRADCA=</HashCode>
@@ -128,7 +128,7 @@
       <Property Name="PurchaseOrderMain" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.PurchaseOrderMain">
+  <Class Name="FinalProjectG27.Views.PurchaseOrderMain" Collapsed="true">
     <Position X="9.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>8AABMxQUACAAAZAAAAGAUQgWgMw/LAAB2OAjARBAACA=</HashCode>
@@ -175,7 +175,7 @@
       <Property Name="SaleOrderBL" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.SaleOrdersMain">
+  <Class Name="FinalProjectG27.Views.SaleOrdersMain" Collapsed="true">
     <Position X="13.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>8AEQIhQUACAACRAAAAGAUQgWgMw/JAAB0OAiAQBCACA=</HashCode>
@@ -202,7 +202,7 @@
       <Property Name="EmployeesMain" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.EmployeesMain">
+  <Class Name="FinalProjectG27.Views.EmployeesMain" Collapsed="true">
     <Position X="16" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAcBQVAiAQABgECQGIEQQWgAwgJIACkEAAByBABCA=</HashCode>
@@ -269,21 +269,21 @@
       <Property Name="WarehouseStockMain" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="FinalProjectG27.Views.StockTransferMain">
+  <Class Name="FinalProjectG27.Views.StockTransferMain" Collapsed="true">
     <Position X="18.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAYBAVAiAQABgEAQGIAAQWgAwAJIAAkEAAByBABCA=</HashCode>
       <FileName>Views\StockTransferMain.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FinalProjectG27.Views.SuppliersMain">
+  <Class Name="FinalProjectG27.Views.SuppliersMain" Collapsed="true">
     <Position X="20.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>8AAAMlQQACAEARAACAGAUAASgMw7AAAC2OAjAUBQAyg=</HashCode>
       <FileName>Views\SuppliersMain.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FinalProjectG27.Views.WarehouseStockMain">
+  <Class Name="FinalProjectG27.Views.WarehouseStockMain" Collapsed="true">
     <Position X="23" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAYAAVAiAQABAEAQGIAAQWgAwgAIAAkEAAByBABCA=</HashCode>

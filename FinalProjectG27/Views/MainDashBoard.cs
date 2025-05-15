@@ -545,7 +545,15 @@ namespace FinalProjectG27
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            Login mainDashBoard = new Login();
+            mainDashBoard.WindowState = this.WindowState;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                mainDashBoard.Size = this.Size;
+                mainDashBoard.Location = this.Location;
+            }
+            mainDashBoard.Show();
+            this.Hide();
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
