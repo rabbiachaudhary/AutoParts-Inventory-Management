@@ -73,13 +73,14 @@ namespace FinalProjectG27.Controllers
 
             if (string.IsNullOrWhiteSpace(search))
             {
-                 query = "select transfer_id, warehouse_name,product_name, quantity,note from stock_transfer st join warehouses w on w.warehouse_id=st.warehouse_id join products on p.product_id=st.product_id";
+               query = "select transfer_id,warehouse_name,product_name, quantity,note from stock_transfer st join warehouses w on w.warehouse_id=st.warehouse_id join products p on p.product_id=st.product_id";
+
 
             }
 
             else
             {
-                query = "select  transfer_id,warehouse_name,product_name, quantity,note from stock_transfer st join warehouses w on w.warehouse_id=st.warehouse_id join products on p.product_id=st.product_id where warehouse_name like '%" + search+"%'";
+                query = "select  transfer_id,warehouse_name,product_name, quantity,note from stock_transfer st join warehouses w on w.warehouse_id=st.warehouse_id join products p on p.product_id=st.product_id where warehouse_name like '%" + search+"%'";
 
 
 
