@@ -51,124 +51,138 @@ namespace FinalProjectG27.Views
 
         private void editbtn_Click(object sender, EventArgs e)
         {
-            decimal Tax, Markup;
-
-            // First validate Purchase Price
-            if (!decimal.TryParse(tax.Text, out Tax))
+            try
             {
-                MessageBox.Show("Please enter a valid Tax Price (decimal number only).");
-                return;
-            }
+                decimal Tax, Markup;
 
-            // Then validate Sale Price
-            if (!decimal.TryParse(markup.Text, out Markup))
+                // First validate Purchase Price
+                if (!decimal.TryParse(tax.Text, out Tax))
+                {
+                    MessageBox.Show("Please enter a valid Tax Price (decimal number only).");
+                    return;
+                }
+
+                // Then validate Sale Price
+                if (!decimal.TryParse(markup.Text, out Markup))
+                {
+                    MessageBox.Show("Please enter a valid Markup Price (decimal number only).");
+                    return;
+                }
+
+                string Name = name.Text;
+                string Des = des.Text;
+                Tax = decimal.Parse(tax.Text);
+                Markup = decimal.Parse(markup.Text);
+
+                // Validate Name
+                if (string.IsNullOrWhiteSpace(Name))
+                {
+                    MessageBox.Show("Name is required.");
+                    return;
+                }
+
+                // Validate Description
+                if (string.IsNullOrWhiteSpace(Des))
+                {
+                    MessageBox.Show("Description is required.");
+                    return;
+                }
+
+                // Validate Tax
+                if (string.IsNullOrWhiteSpace(tax.Text))
+                {
+                    MessageBox.Show("Please enter a valid, non-negative tax value.");
+                    return;
+                }
+
+                // Validate Markup
+                if (string.IsNullOrWhiteSpace(markup.Text))
+                {
+                    MessageBox.Show("Please enter a valid, non-negative markup value.");
+                    return;
+                }
+
+                CategoryBL c = new CategoryBL(Name, Des, Tax, Markup);
+                CategoryDL.updateCategory(c, categoryId);
+                main.LoadData();
+                MessageBox.Show("Updated Successfully");
+                this.Close();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Please enter a valid Markup Price (decimal number only).");
-                return;
+                MessageBox.Show("error" + ex.Message);
             }
-
-            string Name = name.Text;
-            string Des = des.Text;
-             Tax = decimal.Parse(tax.Text);
-             Markup = decimal.Parse(markup.Text);
-
-            // Validate Name
-            if (string.IsNullOrWhiteSpace(Name))
-            {
-                MessageBox.Show("Name is required.");
-                return;
-            }
-
-            // Validate Description
-            if (string.IsNullOrWhiteSpace(Des))
-            {
-                MessageBox.Show("Description is required.");
-                return;
-            }
-
-            // Validate Tax
-            if (string.IsNullOrWhiteSpace(tax.Text))
-            {
-                MessageBox.Show("Please enter a valid, non-negative tax value.");
-                return;
-            }
-
-            // Validate Markup
-            if (string.IsNullOrWhiteSpace(markup.Text))
-            {
-                MessageBox.Show("Please enter a valid, non-negative markup value.");
-                return;
-            }
-
-            CategoryBL c = new CategoryBL(Name, Des, Tax, Markup);
-            CategoryDL.updateCategory(c, categoryId);
-            main.LoadData();
-            MessageBox.Show("Updated Successfully");
-            this.Close();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-
-            decimal Tax, Markup;
-
-            // First validate Purchase Price
-            if (!decimal.TryParse(tax.Text, out Tax))
+            try
             {
-                MessageBox.Show("Please enter a valid Tax Price (decimal number only).");
-                return;
+
+                decimal Tax, Markup;
+
+                // First validate Purchase Price
+                if (!decimal.TryParse(tax.Text, out Tax))
+                {
+                    MessageBox.Show("Please enter a valid Tax Price (decimal number only).");
+                    return;
+                }
+
+                // Then validate Sale Price
+                if (!decimal.TryParse(markup.Text, out Markup))
+                {
+                    MessageBox.Show("Please enter a valid Markup Price (decimal number only).");
+                    return;
+                }
+                string Name = name.Text;
+                string Des = des.Text;
+                Tax = decimal.Parse(tax.Text);
+                Markup = decimal.Parse(markup.Text);
+
+                // Validate Name
+                if (string.IsNullOrWhiteSpace(Name))
+                {
+                    MessageBox.Show("Name is required.");
+                    return;
+                }
+
+                // Validate Description
+                if (string.IsNullOrWhiteSpace(Des))
+                {
+                    MessageBox.Show("Description is required.");
+                    return;
+                }
+
+                // Validate Tax
+                if (string.IsNullOrWhiteSpace(tax.Text))
+                {
+                    MessageBox.Show("Please enter a valid, non-negative tax value.");
+                    return;
+                }
+
+                // Validate Markup
+                if (string.IsNullOrWhiteSpace(markup.Text))
+                {
+                    MessageBox.Show("Please enter a valid, non-negative markup value.");
+                    return;
+                }
+
+                CategoryBL c = new CategoryBL(Name, Des, Tax, Markup);
+                bool isAdd = CategoryDL.AddCategory(c);
+                if (isAdd)
+                {
+                    MessageBox.Show("Added Successfully");
+                    main.LoadData();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
-
-            // Then validate Sale Price
-            if (!decimal.TryParse(markup.Text, out Markup))
+            catch (Exception ex)
             {
-                MessageBox.Show("Please enter a valid Markup Price (decimal number only).");
-                return;
-            }
-            string Name = name.Text;
-            string Des=des.Text;
-            Tax=decimal.Parse(tax.Text);
-            Markup = decimal.Parse(markup.Text);
-
-            // Validate Name
-            if (string.IsNullOrWhiteSpace(Name))
-            {
-                MessageBox.Show("Name is required.");
-                return;
-            }
-
-            // Validate Description
-            if (string.IsNullOrWhiteSpace(Des))
-            {
-                MessageBox.Show("Description is required.");
-                return;
-            }
-
-            // Validate Tax
-            if (string.IsNullOrWhiteSpace(tax.Text))
-            {
-                MessageBox.Show("Please enter a valid, non-negative tax value.");
-                return;
-            }
-
-            // Validate Markup
-            if (string.IsNullOrWhiteSpace(markup.Text))
-            {
-                MessageBox.Show("Please enter a valid, non-negative markup value.");
-                return;
-            }
-
-            CategoryBL c =new CategoryBL(Name, Des, Tax, Markup);
-           bool isAdd= CategoryDL.AddCategory(c);
-            if (isAdd)
-            {
-                MessageBox.Show("Added Successfully");
-                main.LoadData();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error");
+                MessageBox.Show("error" + ex.Message);
             }
         }
     }

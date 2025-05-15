@@ -9,6 +9,14 @@ namespace FinalProjectG27
 {
     internal class warehousesDL
     {
+        internal warehousesBL warehousesBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool AddWarehouse(warehousesBL warehouse)
         {
             try

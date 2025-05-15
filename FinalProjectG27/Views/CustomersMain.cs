@@ -79,7 +79,7 @@ namespace FinalProjectG27.Views
         {
             try
             {
-                if (dgvcustomer.CurrentRow != null)
+                if (dgvcustomer.CurrentRow != null && (dgvcustomer.SelectedRows.Count == 1))
                 {
                     DialogResult confirm = MessageBox.Show("Are you sure you want to delete this record?",
                                                            "Confirm Deletion",

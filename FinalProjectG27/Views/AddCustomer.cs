@@ -51,113 +51,128 @@ namespace FinalProjectG27.Views
 
         private void editbtn_Click(object sender, EventArgs e)
         {
-
-            string Fname = fname.Text;
-            string Lname = lname.Text;
-            string Email = email.Text;
-            string Contact = contact.Text.Trim();
-            string Address = address.Text;
-
-            // First Name
-            if (string.IsNullOrWhiteSpace(Fname))
+            try
             {
-                MessageBox.Show("First name is required.");
-                return;
-            }
+                string Fname = fname.Text;
+                string Lname = lname.Text;
+                string Email = email.Text;
+                string Contact = contact.Text.Trim();
+                string Address = address.Text;
 
-            // Last Name
-            if (string.IsNullOrWhiteSpace(Lname))
+                // First Name
+                if (string.IsNullOrWhiteSpace(Fname))
+                {
+                    MessageBox.Show("First name is required.");
+                    return;
+                }
+
+                // Last Name
+                if (string.IsNullOrWhiteSpace(Lname))
+                {
+                    MessageBox.Show("Last name is required.");
+                    return;
+                }
+
+                // Email
+                if (string.IsNullOrWhiteSpace(Email))
+                {
+                    MessageBox.Show("Email is required.");
+                    return;
+                }
+
+                // Contact
+                if (string.IsNullOrWhiteSpace(Contact))
+                {
+                    MessageBox.Show("Contact number is required.");
+                    return;
+                }
+
+                // Address
+                if (string.IsNullOrWhiteSpace(Address))
+                {
+                    MessageBox.Show("Address is required.");
+                    return;
+                }
+
+                CustomerBL c = new CustomerBL(Fname, Lname, Contact, Address, Email);
+                CustomerDL.UpdateCustomer(c, customerId);
+                main.LoadData();
+                MessageBox.Show("Updated successfully");
+                this.Close();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Last name is required.");
-                return;
+                MessageBox.Show("error" + ex.Message);
             }
-
-            // Email
-            if (string.IsNullOrWhiteSpace(Email))
-            {
-                MessageBox.Show("Email is required.");
-                return;
-            }
-
-            // Contact
-            if (string.IsNullOrWhiteSpace(Contact))
-            {
-                MessageBox.Show("Contact number is required.");
-                return;
-            }
-
-            // Address
-            if (string.IsNullOrWhiteSpace(Address))
-            {
-                MessageBox.Show("Address is required.");
-                return;
-            }
-
-            CustomerBL c = new CustomerBL(Fname, Lname, Contact, Address, Email);
-            CustomerDL.UpdateCustomer(c,customerId);
-            main.LoadData();
-            MessageBox.Show("Updated successfully");
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            string Fname = fname.Text;
-            string Lname = lname.Text;
-            string Email= email.Text;   
-            string Contact= contact.Text.Trim();
-            string Address= address.Text;
+            try
+            {
+                string Fname = fname.Text;
+                string Lname = lname.Text;
+                string Email = email.Text;
+                string Contact = contact.Text.Trim();
+                string Address = address.Text;
 
-            // First Name
-            if (string.IsNullOrWhiteSpace(Fname))
-            {
-                MessageBox.Show("First name is required.");
-                return;
-            }
+                // First Name
+                if (string.IsNullOrWhiteSpace(Fname))
+                {
+                    MessageBox.Show("First name is required.");
+                    return;
+                }
 
-            // Last Name
-            if (string.IsNullOrWhiteSpace(Lname))
-            {
-                MessageBox.Show("Last name is required.");
-                return;
-            }
+                // Last Name
+                if (string.IsNullOrWhiteSpace(Lname))
+                {
+                    MessageBox.Show("Last name is required.");
+                    return;
+                }
 
-            // Email
-            if (string.IsNullOrWhiteSpace(Email))
-            {
-                MessageBox.Show("Email is required.");
-                return;
-            }
+                // Email
+                if (string.IsNullOrWhiteSpace(Email))
+                {
+                    MessageBox.Show("Email is required.");
+                    return;
+                }
 
-            // Contact
-            if (string.IsNullOrWhiteSpace(Contact))
-            {
-                MessageBox.Show("Contact number is required.");
-                return;
-            }
+                // Contact
+                if (string.IsNullOrWhiteSpace(Contact))
+                {
+                    MessageBox.Show("Contact number is required.");
+                    return;
+                }
 
-            // Address
-            if (string.IsNullOrWhiteSpace(Address))
-            {
-                MessageBox.Show("Address is required.");
-                return;
-            }
+                // Address
+                if (string.IsNullOrWhiteSpace(Address))
+                {
+                    MessageBox.Show("Address is required.");
+                    return;
+                }
 
-            if (Contact.Length != 11 || !Contact.All(char.IsDigit))
-            {
-                MessageBox.Show("Contact must be exactly 11 digits with no spaces or letters.");
-                return;
-            }
+                if (Contact.Length != 11 || !Contact.All(char.IsDigit))
+                {
+                    MessageBox.Show("Contact must be exactly 11 digits with no spaces or letters.");
+                    return;
+                }
 
-            CustomerBL c=new CustomerBL(Fname,Lname, Contact, Address, Email);
-            bool isAdd =CustomerDL.AddCustomer(c);
-            if (isAdd)
-            {
-                MessageBox.Show("Customer Added successfully");
-                main.LoadData();
+                CustomerBL c = new CustomerBL(Fname, Lname, Contact, Address, Email);
+                bool isAdd = CustomerDL.AddCustomer(c);
+                if (isAdd)
+                {
+                    MessageBox.Show("Customer Added successfully");
+                    main.LoadData();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Customer Not added");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Customer Not added");
+                MessageBox.Show("error" + ex.Message);
             }
         }
     }

@@ -155,7 +155,16 @@ namespace FinalProjectG27.Views
                 
                 ProductsBL productObj = new ProductsBL(productName, description, Weight, Size, Warranty, purP, saleP, categoryId);
 
-                ProductsDL.UpdateProduct(productObj, productId);
+                bool update=ProductsDL.UpdateProduct(productObj, productId);
+                if (update)
+                {
+                    MessageBox.Show("Updated successfully !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Not updated ....");
+                }
                 
             }
             catch (Exception ex)
@@ -167,79 +176,86 @@ namespace FinalProjectG27.Views
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            string productName = product.Text;
-            string description = des.Text;
-
-            decimal purP, saleP,Weight;
-
-            if (!decimal.TryParse(pp.Text, out purP))
+            try
             {
-                MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
-                return;
+                string productName = product.Text;
+                string description = des.Text;
+
+                decimal purP, saleP, Weight;
+
+                if (!decimal.TryParse(pp.Text, out purP))
+                {
+                    MessageBox.Show("Please enter a valid Purchase Price (decimal number only).");
+                    return;
+                }
+
+                if (!decimal.TryParse(sp.Text, out saleP))
+                {
+                    MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
+                    return;
+                }
+
+                if (!decimal.TryParse(weight.Text, out Weight) || Weight <= 0)
+                {
+                    MessageBox.Show("Please enter a valid numeric weight.");
+                    return;
+                }
+
+
+                if (string.IsNullOrWhiteSpace(productName))
+                {
+                    MessageBox.Show("Product name is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(description))
+                {
+                    MessageBox.Show("Description is required.");
+                    return;
+                }
+
+                string Size = size.Text;
+                string Warranty = warranty.Text;
+                string Category = comboBox1.Text;
+
+                if (string.IsNullOrWhiteSpace(Size))
+                {
+                    MessageBox.Show("Size is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(Warranty))
+                {
+                    MessageBox.Show("Warranty is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(Category))
+                {
+                    MessageBox.Show("Please select a category.");
+                    return;
+                }
+
+                int categoryId = ProductsDL.GetCategoryIdByName(Category);
+
+                ProductsBL Product = new ProductsBL(productName, description, Weight, Size, Warranty, purP, saleP, categoryId);
+
+                bool isadded = ProductsDL.AddProduct(Product);
+
+                if (isadded)
+                {
+                    MessageBox.Show("Product Added Successfully");
+                    productMain.LoadData();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error: Product could not be added.");
+                }
             }
-
-            if (!decimal.TryParse(sp.Text, out saleP))
+            catch (Exception ex)
             {
-                MessageBox.Show("Please enter a valid Sale Price (decimal number only).");
-                return;
-            }
-
-            if (!decimal.TryParse(weight.Text, out Weight) || Weight <= 0)
-            {
-                MessageBox.Show("Please enter a valid numeric weight.");
-                return;
-            }
-
-
-            if (string.IsNullOrWhiteSpace(productName))
-            {
-                MessageBox.Show("Product name is required.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(description))
-            {
-                MessageBox.Show("Description is required.");
-                return;
-            }
-
-            string Size = size.Text;
-            string Warranty = warranty.Text;
-            string Category = comboBox1.Text;
-
-            if (string.IsNullOrWhiteSpace(Size))
-            {
-                MessageBox.Show("Size is required.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(Warranty))
-            {
-                MessageBox.Show("Warranty is required.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(Category))
-            {
-                MessageBox.Show("Please select a category.");
-                return;
-            }
-
-            int categoryId = ProductsDL.GetCategoryIdByName(Category);
-
-            ProductsBL Product = new ProductsBL(productName, description, Weight, Size, Warranty, purP, saleP, categoryId);
-
-            bool isadded = ProductsDL.AddProduct(Product);
-
-            if (isadded)
-            {
-                MessageBox.Show("Product Added Successfully");
-                productMain.LoadData();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error: Product could not be added.");
+                MessageBox.Show("error" + ex.Message);
             }
 
         }

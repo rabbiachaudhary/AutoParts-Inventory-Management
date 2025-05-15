@@ -14,6 +14,14 @@ namespace FinalProjectG27.Controllers
 {
     internal class CategoryDL
     {
+        internal CategoryBL CategoryBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool AddCategory(CategoryBL s)
         {
 

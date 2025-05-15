@@ -25,5 +25,13 @@ namespace FinalProjectG27.Models
             Address = address;
 
         }
+
+        public Views.SuppliersMain SuppliersMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

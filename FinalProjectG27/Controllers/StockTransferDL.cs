@@ -10,6 +10,14 @@ namespace FinalProjectG27.Controllers
 {
     internal class StockTransferDL
     {
+        internal StockTransferBL StockTransferBL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool Addtransfer(StockTransferBL s)
         {
             string query = @"insert into stock_transfer(warehouse_id,product_id,quantity,note)

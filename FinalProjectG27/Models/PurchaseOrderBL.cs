@@ -31,5 +31,13 @@ namespace FinalProjectG27.Models
             Status = status;
 
         }
+
+        public Views.PurchaseOrderMain PurchaseOrderMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

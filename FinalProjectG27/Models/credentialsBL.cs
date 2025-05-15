@@ -19,5 +19,13 @@ namespace FinalProjectG27.Models
             Role=role;
 
         }
+
+        public Views.Login Login
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

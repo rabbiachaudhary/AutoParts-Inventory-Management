@@ -29,6 +29,14 @@ namespace FinalProjectG27
             SalePrice = sp;
             CategoryId = Cid;
         }
+
+        public Views.ProductMain ProductMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
 

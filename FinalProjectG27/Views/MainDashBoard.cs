@@ -623,14 +623,14 @@ namespace FinalProjectG27
 
         private void product_Click(object sender, EventArgs e)
         {
-            ProductMain a= new ProductMain();
-            a.WindowState = this.WindowState;
-            if (this.WindowState == FormWindowState.Maximized)
+            ProductMain productMain = new ProductMain();
+            productMain.WindowState = this.WindowState;
+            if (this.WindowState != FormWindowState.Maximized)
             {
-                purchase.Size = this.Size;
-                purchase.Location = this.Location;
+                productMain.Size = this.Size;
+                productMain.Location = this.Location;
             }
-            purchase.Show();
+            productMain.Show();
             this.Hide();
         }
 

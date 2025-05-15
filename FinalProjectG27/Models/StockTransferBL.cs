@@ -19,5 +19,13 @@ namespace FinalProjectG27.Models
             this.note = note;
             this.quantity = quantity;
         }
+
+        public Views.StockTransferMain StockTransferMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

@@ -24,6 +24,12 @@ namespace FinalProjectG27
             this.status = status;
         }
 
-
+        public Views.EmployeesMain EmployeesMain
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
